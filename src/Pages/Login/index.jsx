@@ -1,6 +1,6 @@
-import React from 'react'
-import Button from 'src/Components/Button'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
+import React from 'react';
+import Button from 'src/Components/Button';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 const Login = () => {
   return (
@@ -9,28 +9,35 @@ const Login = () => {
       <div>
         <Formik
           initialValues={{ idUser: '', password: '' }}
-          validate={values => {
-            const errors = {}
+          validate={(values) => {
+            const errors = {};
             if (!values.idUser) {
-              errors.idUser = 'Required'
+              errors.idUser = 'Required';
             }
             if (!values.password) {
-              errors.password = 'Required'
+              errors.password = 'Required';
             }
-            return errors
+            return errors;
           }}
           onSubmit={(values) => {
-            console.log(values)
-          }} >
+            console.log(values);
+          }}
+        >
           {({ errors }) => (
             <Form>
               <div>
                 <label htmlFor="idUser">User</label>
                 <Field name="idUser" type="text" />
-                <ErrorMessage name="idUser" component={() => <div>{errors.idUser}</div>} />
+                <ErrorMessage
+                  name="idUser"
+                  component={() => <div>{errors.idUser}</div>}
+                />
                 <label htmlFor="password">Password</label>
                 <Field name="password" type="password" />
-                <ErrorMessage name="password" component={() => <div>{errors.password}</div>} />
+                <ErrorMessage
+                  name="password"
+                  component={() => <div>{errors.password}</div>}
+                />
 
                 <Button type="submit" name="Login" />
               </div>
@@ -39,7 +46,7 @@ const Login = () => {
         </Formik>
       </div>
     </div>
-  )}
+  );
+};
 
-
-export default Login
+export default Login;

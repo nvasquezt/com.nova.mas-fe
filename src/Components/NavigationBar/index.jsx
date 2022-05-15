@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { HOME_ROUTE, LOGIN_ROUTE } from '../../Constants'
-
+import { HOME_ROUTE, LOGIN_ROUTE } from '../../Constants';
 
 const NavigationBar = () => {
   return (
@@ -9,7 +8,7 @@ const NavigationBar = () => {
       <NavLink to={HOME_ROUTE}>Home</NavLink>
       <NavLink to={LOGIN_ROUTE}>Login</NavLink>
     </nav>
-  )
-}
+  );
+};
 
-export default NavigationBar
+export default NavigationBar;
