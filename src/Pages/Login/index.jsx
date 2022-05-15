@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'src/Components/Button';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { login } from '../../services/loginService';
+import './index.css' 
 
 const Login = () => {
+  const [loginStatus, setLoginStatus] = useState(false);
+  if(localStorage.token){
+    return <h1>You are logged in</h1>
+  }
   return (
     <div>
       <div>Login</div>
       <div>
         <Formik
-          initialValues={{ idUser: '', password: '' }}
+          initialValues={{ userId: '', password: '' }}
           validate={(values) => {
             const errors = {};
-            if (!values.idUser) {
-              errors.idUser = 'Required';
+            if (!values.userId) {
+              errors.userId = 'Required';
             }
             if (!values.password) {
               errors.password = 'Required';
@@ -20,17 +26,27 @@ const Login = () => {
             return errors;
           }}
           onSubmit={(values) => {
-            console.log(values);
+            const logInProcess = async () => {
+              const response = await login(values);
+              const { token } = response;
+              if (typeof(token) === 'string') {
+                window.location.href = '/home';
+                localStorage.setItem('token', token);
+              } else {
+                setLoginStatus(true);
+              }
+            };
+            logInProcess();
           }}
         >
           {({ errors }) => (
             <Form>
               <div>
-                <label htmlFor="idUser">User</label>
-                <Field name="idUser" type="text" />
+                <label htmlFor="userId">User</label>
+                <Field name="userId" type="text" />
                 <ErrorMessage
-                  name="idUser"
-                  component={() => <div>{errors.idUser}</div>}
+                  name="userId"
+                  component={() => <div>{errors.userId}</div>}
                 />
                 <label htmlFor="password">Password</label>
                 <Field name="password" type="password" />
@@ -38,8 +54,8 @@ const Login = () => {
                   name="password"
                   component={() => <div>{errors.password}</div>}
                 />
-
                 <Button type="submit" name="Login" />
+                {loginStatus && <div>Invalid Login</div>}
               </div>
             </Form>
           )}

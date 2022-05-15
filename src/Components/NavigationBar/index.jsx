@@ -1,13 +1,24 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { HOME_ROUTE, LOGIN_ROUTE } from '../../Constants';
+import { NavLink, Link } from 'react-router-dom';
+import { HOME_ROUTE } from '../../Constants';
 
 const NavigationBar = () => {
-  return (
+  if (localStorage.token) {
+    return (
     <nav>
       <NavLink to={HOME_ROUTE}>Home</NavLink>
-      <NavLink to={LOGIN_ROUTE}>Login</NavLink>
+      <Link
+        to="/"
+        onClick={() => {
+          localStorage.removeItem('token');
+          window.location.href = '/';
+        }}
+      >Cerrar Sesión</Link>
     </nav>
+    );
+  };
+  return (
+    <div></div>
   );
 };
 
