@@ -46,16 +46,16 @@ const Login = () => {
                 <Field name="userId" type="text" />
                 <ErrorMessage
                   name="userId"
-                  component={() => <div>{errors.userId}</div>}
+                  component={() => <div className='error'>{errors.userId}</div>}
                 />
                 <label htmlFor="password">Password</label>
-                <Field name="password" type="password" />
+                <Field className={errors.password || errors.password || loginStatus ? 'error': null} name="password" type="password" />
                 <ErrorMessage
                   name="password"
-                  component={() => <div>{errors.password}</div>}
+                  component={() => <div className='error'>{errors.password}</div>}
                 />
                 <Button type="submit" name="Login" />
-                {loginStatus && <div>Invalid Login</div>}
+                {loginStatus && <div className='error'>Invalid Login</div>}
               </div>
             </Form>
           )}
