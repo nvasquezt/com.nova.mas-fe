@@ -11,9 +11,9 @@ const VehiclePage = () => {
       </div>
       <div>
         <img
-            src="https://img.medicalexpo.es/images_me/photo-g/126411-15466232.webp"
-            alt="ambulance"
-          />
+          src="https://img.medicalexpo.es/images_me/photo-g/126411-15466232.webp"
+          alt="ambulance"
+        />
       </div>
       <div>
         <p>
