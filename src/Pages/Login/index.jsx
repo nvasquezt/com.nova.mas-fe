@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import Button from 'src/Components/Button';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { login } from '../../services/loginService';
-import './index.css' 
+import './index.css';
 
 const Login = () => {
   const [loginStatus, setLoginStatus] = useState(false);
-  if(localStorage.token){
-    return <h1>You are logged in</h1>
+  if (localStorage.token) {
+    return <h1>You are logged in</h1>;
   }
   return (
     <div>
@@ -29,7 +29,7 @@ const Login = () => {
             const logInProcess = async () => {
               const response = await login(values);
               const { token } = response;
-              if (typeof(token) === 'string') {
+              if (typeof token === 'string') {
                 window.location.href = '/home';
                 localStorage.setItem('token', token);
               } else {
@@ -46,16 +46,26 @@ const Login = () => {
                 <Field name="userId" type="text" />
                 <ErrorMessage
                   name="userId"
-                  component={() => <div className='error'>{errors.userId}</div>}
+                  component={() => <div className="error">{errors.userId}</div>}
                 />
                 <label htmlFor="password">Password</label>
-                <Field className={errors.password || errors.password || loginStatus ? 'error': null} name="password" type="password" />
+                <Field
+                  className={
+                    errors.password || errors.password || loginStatus
+                      ? 'error'
+                      : null
+                  }
+                  name="password"
+                  type="password"
+                />
                 <ErrorMessage
                   name="password"
-                  component={() => <div className='error'>{errors.password}</div>}
+                  component={() => (
+                    <div className="error">{errors.password}</div>
+                  )}
                 />
                 <Button type="submit" name="Login" />
-                {loginStatus && <div className='error'>Invalid Login</div>}
+                {loginStatus && <div className="error">Invalid Login</div>}
               </div>
             </Form>
           )}
