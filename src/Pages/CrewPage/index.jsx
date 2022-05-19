@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Annotations from 'src/Components/Annotations';
 import Button from 'src/Components/Button';
 
 const CrewPage = () => {
@@ -16,7 +17,9 @@ const CrewPage = () => {
         <h5>Role</h5>
       </div>
       <div>
-        <Button type={'button'} name={'Annotations'} />
+        <Annotations />
+      </div>
+      <div>
         <Link to={'/home'}>
           <Button type={'button'} name={'Home'} />
         </Link>

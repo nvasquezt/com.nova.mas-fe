@@ -4,6 +4,10 @@ import PrevMaintenance from 'src/Components/PrevMaintenance';
 import SpecMaintenance from 'src/Components/SpecMaintenance';
 import Button from 'src/Components/Button';
 import { Link } from 'react-router-dom';
+import {
+  HOME_ROUTE,
+  VEHICLEPAGE_ROUTE,
+} from 'src/Constants';
 
 const MaintenancesPage = () => {
   return (
@@ -21,10 +25,10 @@ const MaintenancesPage = () => {
         <SpecMaintenance />
       </div>
       <div>
-        <Link to={'/vehiclepage'}>
+        <Link to={VEHICLEPAGE_ROUTE}>
           <Button type={'button'} name={'Vehicle detail'} />
         </Link>
-        <Link to={'/home'}>
+        <Link to={HOME_ROUTE}>
           <Button type={'button'} name={'Home'} />
         </Link>
       </div>

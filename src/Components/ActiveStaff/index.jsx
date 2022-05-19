@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ActiveCrew = () => {
+const ActiveStaff = () => {
   return (
     <div>
       <div>
@@ -19,4 +19,4 @@ const ActiveCrew = () => {
   );
 };
 
-export default ActiveCrew;
+export default ActiveStaff;
