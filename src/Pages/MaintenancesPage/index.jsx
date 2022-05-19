@@ -4,10 +4,7 @@ import PrevMaintenance from 'src/Components/PrevMaintenance';
 import SpecMaintenance from 'src/Components/SpecMaintenance';
 import Button from 'src/Components/Button';
 import { Link } from 'react-router-dom';
-import {
-  HOME_ROUTE,
-  VEHICLEPAGE_ROUTE,
-} from 'src/Constants';
+import { HOME_ROUTE, VEHICLEPAGE_ROUTE } from 'src/Constants';
 
 const MaintenancesPage = () => {
   return (

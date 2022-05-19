@@ -21,9 +21,9 @@ const Home = () => {
         <ExpirableDates />
       </div>
       <div>
-      <Link to={CREATEVEHICLE_ROUTE}>
+        <Link to={CREATEVEHICLE_ROUTE}>
           <Button type={'button'} name={'Create'} />
-          </Link>
+        </Link>
       </div>
     </div>
   );

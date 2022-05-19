@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from 'src/Components/Button';
 import DatesByVehicles from 'src/Components/datesByVehicles';
 import MapLogs from 'src/Components/MapLogs';
-import {
-  HOME_ROUTE,
-  MAINTENANCE_ROUTE,
-} from 'src/Constants';
+import { HOME_ROUTE, MAINTENANCE_ROUTE } from 'src/Constants';
 
 const VehiclePage = () => {
   return (
@@ -30,7 +27,7 @@ const VehiclePage = () => {
         <DatesByVehicles />
       </div>
       <div>
-      <MapLogs />
+        <MapLogs />
       </div>
       <div>
         <Button type={'button'} name={'Edit this vehicle'} />
