@@ -1,23 +1,43 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import Annotations from 'src/Components/Annotations';
 import Button from 'src/Components/Button';
+import { getUserByIdThunk } from 'src/Store/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CrewPage = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const userById = useSelector((state) => state.userById);
+
+  useEffect(() => {
+    dispatch(getUserByIdThunk(id));
+  }, [dispatch]);
+
+  const { name, lastName, userPhone, jobPosition, picProfile, email, status } =
+    userById;
+
   return (
     <div>
       <div>
-        <img src="image.png" alt="john doe" />
+        <img src={picProfile} alt={name} />
       </div>
       <div>
-        <h1>John doe</h1>
-        <h5>ID Number</h5>
-        <h5>phone</h5>
-        <h5>status</h5>
-        <h5>Role</h5>
+        <h1>
+          {name} {lastName}
+        </h1>
       </div>
       <div>
-        <Annotations />
+        <p>
+          <strong>ID Number:</strong> {id} <br />
+          <strong>Job Position:</strong> {jobPosition} <br />
+          <strong>Phone Number:</strong> {userPhone} <br />
+          <strong>Email:</strong> {email} <br />
+          <strong>Status:</strong> {status ? 'Active' : 'Inactive'} <br />
+        </p>
+      </div>
+      <div>
+        <Annotations idUser={id} />
       </div>
       <div>
         <Link to={'/home'}>

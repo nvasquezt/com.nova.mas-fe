@@ -1,28 +1,56 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ActiveStaff from 'src/Components/ActiveStaff';
 import CardVehicle from 'src/Components/CardVehicle';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllVehiclesThunk, getAllUsersThunk } from 'src/Store/actions';
 import ExpirableDates from 'src/Components/ExpirableDates';
 import Button from 'src/Components/Button';
-import { CREATEVEHICLE_ROUTE } from 'src/Constants';
+import { CREATEUSER_ROUTE, CREATEVEHICLE_ROUTE } from 'src/Constants';
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const allVehicles = useSelector((state) => state.allVehicles);
+  const allUsers = useSelector((state) => state.allUsers);
+  useEffect(() => {
+    dispatch(getAllVehiclesThunk());
+    dispatch(getAllUsersThunk());
+  }, [dispatch]);
   return (
     <div>
       <div>
-        <Link to={'/vehiclepage'}>
-          <CardVehicle />
-        </Link>
+        <div>
+          <h1>Active Vehicles</h1>
+        </div>
+        <div>
+          {allVehicles.slice(1).map((vehicle) => (
+            <Link key={vehicle.id} to={`/vehiclepage/${vehicle.id}`}>
+              <CardVehicle key={vehicle.id} vehicle={vehicle} />
+            </Link>
+          ))}
+        </div>
       </div>
       <div>
-        <ActiveStaff />
+        <div>
+          <h1>Active Staff</h1>
+        </div>
+        <div>
+          {allUsers.slice(1).map((user) => (
+            <Link key={user.idUser} to={`/crewpage/${user.idUser}`}>
+              <ActiveStaff key={user.idUser} user={user} />
+            </Link>
+          ))}
+        </div>
       </div>
       <div>
         <ExpirableDates />
       </div>
       <div>
         <Link to={CREATEVEHICLE_ROUTE}>
-          <Button type={'button'} name={'Create'} />
+          <Button type={'button'} name={'Add new ambulance'} />
+        </Link>
+        <Link to={CREATEUSER_ROUTE}>
+          <Button type={'button'} name={'Add new user'} />
         </Link>
       </div>
     </div>

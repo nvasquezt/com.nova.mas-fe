@@ -1,21 +1,38 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { getAnnotationByIdThunk } from 'src/Store/actions';
+import { useSelector, useDispatch } from 'react-redux';
+import Button from '../Button';
 
-const Annotations = () => {
+const Annotations = (props) => {
+  const id = props.idUser;
+  const dispatch = useDispatch();
+  const annotationById = useSelector((state) => state.annotationById);
+
+  useEffect(() => {
+    dispatch(getAnnotationByIdThunk(id));
+  }, [dispatch]);
+
   return (
     <div>
       <div>
         <h1>Annotations</h1>
       </div>
-      <div>
-        <p>
-          <strong>Date: </strong> 15/03/2022
-          <br />
-          <strong>Annotation: </strong> Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Quas impedit, laudantium vel quia perspiciatis
-          accusantium saepe dignissimos doloribus fugiat, incidunt amet sed eum
-          laboriosam id voluptas ipsum labore aliquid molestias. <br />
-        </p>
-      </div>
+      {annotationById.map((annotation) =>
+        annotationById ? (
+          <div key={annotation.idAnnotation}>
+            <p>
+              <strong>ID Number:</strong> {annotation.idAnnotation} <br />
+              <strong>Date:</strong> {annotation.date} <br />
+              <strong>Description:</strong> {annotation.description} <br />
+            </p>
+          </div>
+        ) : null
+      )}
+      <Link to={`/newannotation/${id}`}>
+        <Button type={'button'} name={'Add new annotation'} />
+      </Link>
     </div>
   );
 };

@@ -1,18 +1,17 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
-const CardVehicle = () => {
+const CardVehicle = (props) => {
+  const { picVehicle, id, licensePlate, brand } = props.vehicle;
   return (
     <div>
       <div>
-        <img
-          src="https://img.medicalexpo.es/images_me/photo-g/126411-15466232.webp"
-          alt="ambulance"
-        />
+        <img src={picVehicle} alt={`ambulance A-00${id}`} />
       </div>
       <div>
-        <h1>A-1</h1>
-        <h5>lincese Plate: ABC1236</h5>
-        <h5>Brand: Toyota</h5>
+        <h1>{`ambulance A-00${id}`}</h1>
+        <h5>lincese Plate: {licensePlate}</h5>
+        <h5>Brand: {brand}</h5>
       </div>
     </div>
   );

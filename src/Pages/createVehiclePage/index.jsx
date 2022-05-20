@@ -1,9 +1,8 @@
 import React from 'react';
-import UploadPicVehicle from 'src/Components/UploadPicVehicle';
-import Input from 'src/Components/Input';
 import Button from 'src/Components/Button';
 import { Link } from 'react-router-dom';
 import { HOME_ROUTE, VEHICLEPAGE_ROUTE } from 'src/Constants';
+import FormCreateVehicle from 'src/Components/FormCreateVehicle';
 
 const CreateVehiclePage = () => {
   return (
@@ -12,19 +11,7 @@ const CreateVehiclePage = () => {
         <h1>Create Vehicle</h1>
       </div>
       <div>
-        <UploadPicVehicle />
-      </div>
-      <div>
-        <form action="submit">
-          <label htmlFor="plate"></label>
-          <Input
-            type={'text'}
-            name={'plate'}
-            placeholder={'Placa del vehiculo'}
-            onChange
-          />
-          <Button type={'button'} name={'Submit'} />
-        </form>
+        <FormCreateVehicle />
       </div>
       <div>
         <Link to={HOME_ROUTE}>

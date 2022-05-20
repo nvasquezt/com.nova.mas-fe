@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'src/Components/Button';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { login } from '../../services/loginService';
+import { login } from '../../services/loginServices';
 import './index.css';
 
 const Login = () => {

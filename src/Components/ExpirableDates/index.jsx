@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllDatesThunk } from 'src/Store/actions';
 
 const ExpirableDates = () => {
+  const dispatch = useDispatch();
+  const allDates = useSelector((state) => state.allDates);
+  useEffect(() => {
+    dispatch(getAllDatesThunk());
+  }, [dispatch]);
+
   return (
     <div>
       <div>
-        <h1>soon to Expiry</h1>
+        <h1>Soon to expire</h1>
       </div>
       <div>
-        <h3>Fecha por vencer</h3>
-        <h5>Info tipo de seguro </h5>
-        <h5>Código del seguro </h5>
-        <h5>Número de Móvil</h5>
+        {allDates.map((date) => (
+          <div key={date.dateCode}>
+            <div>
+              <p>
+                <strong>Date code:</strong> {date.dateCode}
+                <strong>Ambulance: </strong> {date.idVehicleFk}
+                <strong>SOAT: </strong> {date.soatDate}
+                <strong>Insurance: </strong> {date.insuranceDate}
+                <strong>Legal revision: </strong> {date.legalRevisionDate}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

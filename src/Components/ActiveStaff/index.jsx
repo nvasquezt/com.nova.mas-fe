@@ -1,20 +1,22 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const ActiveStaff = () => {
+const ActiveStaff = (props) => {
+  const { idVehicleFk, name, lastName, jobPosition, picProfile } = props.user;
   return (
     <div>
       <div>
-        <h1>Ambulance Crew # 1</h1>
+        <img src={picProfile} alt={name} />
       </div>
-      <Link to={'/crewpage'}>
-        <div>
-          <h3>Jhon</h3> <h3>Doe</h3>
-        </div>
-        <div>
-          <h5>Role: Driver</h5>
-        </div>
-      </Link>
+      <div>
+        <h3>Ambulance Crew # A-00{idVehicleFk}</h3>
+      </div>
+      <div>
+        <h3>{name}</h3> <h3>{lastName}</h3>
+      </div>
+      <div>
+        <h5>Area: {jobPosition}</h5>
+      </div>
     </div>
   );
 };
