@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'src/Components/Button';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { login } from '../../services/loginServices';
-import './index.css';
+import './Login.css';
 
 const Login = () => {
   const [loginStatus, setLoginStatus] = useState(false);
