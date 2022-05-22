@@ -19,11 +19,7 @@ const VehiclePage = () => {
     fuelType,
     cylinder,
     capacity,
-    soatCode,
-    insurancePolicy,
-    rtmCode,
     vehiclePhone,
-    status,
     picVehicle,
   } = selectedVehicle;
   useEffect(() => {
@@ -32,7 +28,7 @@ const VehiclePage = () => {
   return (
     <div>
       <div>
-        <h1>Ambulance A-00{id}</h1>
+        <h1>Ambulance A-0{id < 10 ? `0${id}` : `${id}`}</h1>
       </div>
       <div>
         <img src={picVehicle} alt="ambulance" />
@@ -53,16 +49,7 @@ const VehiclePage = () => {
           {<br />}
           <strong>Capacity:</strong> {capacity}
           {<br />}
-          <strong>Soat Code:</strong> {soatCode}
-          {<br />}
-          <strong>Insurance Policy:</strong> {insurancePolicy}
-          {<br />}
-          <strong>RTM Code:</strong> {rtmCode}
-          {<br />}
           <strong>Vehicle Phone:</strong> {vehiclePhone}
-          {<br />}
-          <strong>Status:</strong> {status}
-          {<br />}
         </p>
       </div>
       <div>

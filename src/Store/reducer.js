@@ -5,6 +5,7 @@ const initialState = {
   userById: {},
   annotationById: [],
   allDates: [],
+  dateByIdVehicle: {},
 };
 
 export default function reducer(state = initialState, action) {
@@ -38,6 +39,11 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         allDates: action.payload,
+      };
+    case 'GET_DATE_BY_ID_VEHICLE':
+      return {
+        ...state,
+        dateByIdVehicle: action.payload,
       };
     default:
       return state;

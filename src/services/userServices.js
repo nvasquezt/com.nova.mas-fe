@@ -1,7 +1,7 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
 export const createUser = async (payload) => {
-  const token = localStorage.getItem('token');
+  const token = sessionStorage.getItem('token');
   try {
     const response = await fetch(`${API_URL}/api/users`, {
       method: 'POST',
@@ -19,7 +19,7 @@ export const createUser = async (payload) => {
 };
 
 export const getUserById = async (id) => {
-  const token = localStorage.getItem('token');
+  const token = sessionStorage.getItem('token');
   try {
     const response = await fetch(`${API_URL}/api/users/${id}`, {
       method: 'GET',
@@ -36,7 +36,7 @@ export const getUserById = async (id) => {
 };
 
 export const getAllUsers = async () => {
-  const token = localStorage.getItem('token');
+  const token = sessionStorage.getItem('token');
   try {
     const response = await fetch(`${API_URL}/api/users`, {
       method: 'GET',

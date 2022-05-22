@@ -1,7 +1,7 @@
 import { getAllVehicles, getVehicleById } from 'src/services/vehicleServices';
 import { getAllUsers, getUserById } from 'src/services/userServices';
 import { getAnnotationById } from 'src/services/annotationServices';
-import { getAllDates } from 'src/services/dateServices';
+import { getAllDates, getDateByIdVehicle } from 'src/services/dateServices';
 
 export const getAllVehiclesAction = (vehicles) => ({
   type: 'ALL_VEHICLES',
@@ -27,6 +27,10 @@ export const getAllDatesAction = (dates) => ({
   type: 'ALL_DATES',
   payload: dates,
 });
+export const getDateByIdVehicleAction = (date) => ({
+  type: 'GET_DATE_BY_ID_VEHICLE',
+  payload: date,
+});
 
 export const getAllVehiclesThunk = () => async (dispatch) => {
   try {
@@ -36,7 +40,6 @@ export const getAllVehiclesThunk = () => async (dispatch) => {
     console.log(error, 'error');
   }
 };
-
 export const getVehicleByIdThunk = (id) => async (dispatch) => {
   try {
     const vehicle = await getVehicleById(id);
@@ -45,7 +48,6 @@ export const getVehicleByIdThunk = (id) => async (dispatch) => {
     console.log(error, 'error');
   }
 };
-
 export const getAllUsersThunk = () => async (dispatch) => {
   try {
     const users = await getAllUsers();
@@ -54,7 +56,6 @@ export const getAllUsersThunk = () => async (dispatch) => {
     console.log(error, 'error');
   }
 };
-
 export const getUserByIdThunk = (id) => async (dispatch) => {
   try {
     const user = await getUserById(id);
@@ -63,7 +64,6 @@ export const getUserByIdThunk = (id) => async (dispatch) => {
     console.log(error, 'error');
   }
 };
-
 export const getAnnotationByIdThunk = (id) => async (dispatch) => {
   try {
     const annotation = await getAnnotationById(id);
@@ -72,11 +72,18 @@ export const getAnnotationByIdThunk = (id) => async (dispatch) => {
     console.log(error, 'error');
   }
 };
-
 export const getAllDatesThunk = () => async (dispatch) => {
   try {
     const dates = await getAllDates();
     dispatch(getAllDatesAction(dates));
+  } catch (error) {
+    console.log(error, 'error');
+  }
+};
+export const getDateByIdVehicleThunk = (id) => async (dispatch) => {
+  try {
+    const date = await getDateByIdVehicle(id);
+    dispatch(getDateByIdVehicleAction(date));
   } catch (error) {
     console.log(error, 'error');
   }

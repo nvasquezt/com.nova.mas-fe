@@ -1,7 +1,7 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
 export const createVehicle = async (payload) => {
-  const token = localStorage.getItem('token');
+  const token = sessionStorage.getItem('token');
   try {
     const response = await fetch(`${API_URL}/api/vehicles`, {
       method: 'POST',
@@ -19,7 +19,7 @@ export const createVehicle = async (payload) => {
 };
 
 export const getAllVehicles = async () => {
-  const token = localStorage.getItem('token');
+  const token = sessionStorage.getItem('token');
   try {
     const response = await fetch(`${API_URL}/api/vehicles`, {
       method: 'GET',
@@ -36,7 +36,7 @@ export const getAllVehicles = async () => {
 };
 
 export const getVehicleById = async (id) => {
-  const token = localStorage.getItem('token');
+  const token = sessionStorage.getItem('token');
   try {
     const response = await fetch(`${API_URL}/api/vehicles/${id}`, {
       method: 'GET',

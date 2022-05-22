@@ -6,7 +6,7 @@ import './index.css';
 
 const Login = () => {
   const [loginStatus, setLoginStatus] = useState(false);
-  if (localStorage.token) {
+  if (sessionStorage.token) {
     return <h1>You are logged in</h1>;
   }
   return (
@@ -31,7 +31,7 @@ const Login = () => {
               const { token } = response;
               if (typeof token === 'string') {
                 window.location.href = '/home';
-                localStorage.setItem('token', token);
+                sessionStorage.setItem('token', token);
               } else {
                 setLoginStatus(true);
               }

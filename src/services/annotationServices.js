@@ -1,7 +1,7 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
 export const getAnnotationById = async (id) => {
-  const token = localStorage.getItem('token');
+  const token = sessionStorage.getItem('token');
   try {
     const response = await fetch(`${API_URL}/api/user/annotations/${id}`, {
       method: 'GET',
@@ -18,7 +18,7 @@ export const getAnnotationById = async (id) => {
 };
 
 export const createAnnotation = async (annotation) => {
-  const token = localStorage.getItem('token');
+  const token = sessionStorage.getItem('token');
   try {
     const response = await fetch(`${API_URL}/api/user/annotations`, {
       method: 'POST',

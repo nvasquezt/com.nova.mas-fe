@@ -9,7 +9,10 @@ const ActiveStaff = (props) => {
         <img src={picProfile} alt={name} />
       </div>
       <div>
-        <h3>Ambulance Crew # A-00{idVehicleFk}</h3>
+        <h3>
+          Ambulance Crew # A-0
+          {idVehicleFk < 10 ? `0${idVehicleFk}` : `${idVehicleFk}`}
+        </h3>
       </div>
       <div>
         <h3>{name}</h3> <h3>{lastName}</h3>
