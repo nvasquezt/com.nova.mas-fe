@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { getCtvMaintenanceThunk } from 'src/Store/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import './CtvMaintenance.scss';
 
 const CtvMaintenance = () => {
   const id = useParams().id;

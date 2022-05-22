@@ -1,0 +1,18 @@
+.datesByVhehicle {
+    width: 70%;
+    background-color: rgba(27, 27, 27, 0.299);
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+
+    &__info {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+        gap: 4rem;
+    }
+}
