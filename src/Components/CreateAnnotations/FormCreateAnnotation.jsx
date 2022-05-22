@@ -8,7 +8,7 @@ const FormCreateAnnotation = () => {
   const id = useParams().id;
   const [formStatus, setFormStatus] = useState(false);
   return (
-    <div className='formAnnotation'>
+    <div className="formAnnotation">
       <Formik
         initialValues={{
           idUserFk: id,
@@ -36,7 +36,7 @@ const FormCreateAnnotation = () => {
       >
         {({ errors }) => (
           <Form>
-            <div className='formAnnotation__formCointainer'>
+            <div className="formAnnotation__formCointainer">
               <label htmlFor="description">Description</label>
               <Field name="description" id="description" cols="30" rows="10" />
               <ErrorMessage
@@ -48,7 +48,9 @@ const FormCreateAnnotation = () => {
             </div>
             <Button type={'submit'} name={'Create'} />
             {formStatus && (
-              <div className='formAnnotation__error'>Error while adding annotation</div>
+              <div className="formAnnotation__error">
+                Error while adding annotation
+              </div>
             )}
           </Form>
         )}

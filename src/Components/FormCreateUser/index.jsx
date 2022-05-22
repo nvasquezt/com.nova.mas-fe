@@ -7,7 +7,7 @@ import { HOME_ROUTE } from 'src/Constants';
 const FormCreateUser = () => {
   const [formStatus, setFormStatus] = useState(false);
   return (
-    <div className='formCreateUser'>
+    <div className="formCreateUser">
       <Formik
         initialValues={{
           idUser: '',
@@ -63,7 +63,7 @@ const FormCreateUser = () => {
       >
         {({ errors }) => (
           <Form>
-            <div className='formCreateUser__form'>
+            <div className="formCreateUser__form">
               <label htmlFor="idUser"> ID User </label>
               <Field type="text" name="idUser" />
               <ErrorMessage

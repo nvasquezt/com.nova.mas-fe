@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './CardVehicle.scss';
 
 const CardVehicle = (props) => {
   const { picVehicle, id, licensePlate, brand } = props.vehicle;
   return (
-    <div className='cardVehicle'>
-      <div className='cardVehicle__picContainer'>
+    <div className="cardVehicle">
+      <div className="cardVehicle__picContainer">
         <img src={picVehicle} alt={`ambulance A-${id}`} />
       </div>
-      <div className='cardVehicle__info'>
+      <div className="cardVehicle__info">
         <h1>Ambulance A-0{id < 10 ? `0${id}` : `${id}`}</h1>
         <h5>lincese Plate: {licensePlate}</h5>
         <h5>Brand: {brand}</h5>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'src/Components/Button';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { login } from '../../services/loginServices';
-import './Login.css';
+import './Login.scss';
 
 const Login = () => {
   const [loginStatus, setLoginStatus] = useState(false);
@@ -43,31 +43,31 @@ const Login = () => {
         >
           {({ errors }) => (
             <Form>
-              <div className="login__formContainer--inputs">
-                <label htmlFor="userId">User</label>
-                <Field name="userId" type="text" />
-                <ErrorMessage
-                  name="userId"
-                  component={() => <div className="error">{errors.userId}</div>}
-                />
-                <label htmlFor="password">Password</label>
-                <Field
-                  className={
-                    errors.password || errors.password || loginStatus
-                      ? 'error'
-                      : null
-                  }
-                  name="password"
-                  type="password"
-                />
-                <ErrorMessage
-                  name="password"
-                  component={() => (
-                    <div className="error">{errors.password}</div>
-                  )}
-                />
+              <div className="login__formContainer">
+                <div className="login__formContainer--fields">
+                  <label htmlFor="userId">User </label>
+                  <Field name="userId" type="text" />
+                  <ErrorMessage
+                    name="userId"
+                    component={() => (
+                      <div className="login__error">{errors.userId}</div>
+                    )}
+                  />
+                </div>
+                <div className="login__formContainer--fields">
+                  <label htmlFor="password">Password</label>
+                  <Field name="password" type="password" />
+                  <ErrorMessage
+                    name="password"
+                    component={() => (
+                      <div className="login__error">{errors.password}</div>
+                    )}
+                  />
+                </div>
                 <Button type="submit" name="Login" />
-                {loginStatus && <div className="error">Invalid Login</div>}
+                {loginStatus && (
+                  <div className="login__error">Invalid Login</div>
+                )}
               </div>
             </Form>
           )}

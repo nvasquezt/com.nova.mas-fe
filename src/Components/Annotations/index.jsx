@@ -15,13 +15,13 @@ const Annotations = (props) => {
   }, [dispatch]);
 
   return (
-    <div className='annotations'>
-      <div className='annotations__title'>
+    <div className="annotations">
+      <div className="annotations__title">
         <h1>Annotations</h1>
       </div>
       {annotationById.map((annotation) =>
         annotationById ? (
-          <div  className='annotations__info' key={annotation.idAnnotation}>
+          <div className="annotations__info" key={annotation.idAnnotation}>
             <p>
               <strong>ID Number:</strong> {annotation.idAnnotation} <br />
               <strong>Date:</strong> {annotation.date} <br />
