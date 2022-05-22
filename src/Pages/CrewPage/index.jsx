@@ -4,6 +4,7 @@ import Annotations from 'src/Components/Annotations';
 import Button from 'src/Components/Button';
 import { getUserByIdThunk } from 'src/Store/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import './CrewPage.scss';
 
 const CrewPage = () => {
   const { id } = useParams();
@@ -36,6 +37,9 @@ const CrewPage = () => {
           <strong>Status:</strong> {status ? 'Active' : 'Inactive'} <br />
         </p>
       </div>
+      <div className="crewPage__annotationsTitle">
+        <h1>Annotations</h1>
+      </div>
       <div className="crewPage__annotationsContainer">
         <Annotations idUser={id} />
       </div>
@@ -43,6 +47,9 @@ const CrewPage = () => {
         <Link to={'/home'}>
           <Button type={'button'} name={'Home'} />
         </Link>
+        <Link to={`/newannotation/${id}`}>
+        <Button type={'button'} name={'Add new annotation'} />
+      </Link>
       </div>
     </div>
   );
