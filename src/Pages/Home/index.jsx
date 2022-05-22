@@ -7,6 +7,7 @@ import { getAllVehiclesThunk, getAllUsersThunk } from 'src/Store/actions';
 import ExpirableDates from 'src/Components/ExpirableDates';
 import Button from 'src/Components/Button';
 import { CREATEUSER_ROUTE, CREATEVEHICLE_ROUTE } from 'src/Constants';
+import './Home.scss';
 
 const Home = () => {
   const dispatch = useDispatch();

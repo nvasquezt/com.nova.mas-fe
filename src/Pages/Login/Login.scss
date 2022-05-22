@@ -1,6 +1,6 @@
 .login{
   align-items: center;
-  background-color: rgba(244, 242, 242, 0.638);
+  background-color: rgba(39, 38, 38, 0.327);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 35vw;
+  backdrop-filter: blur(0.4rem);
   
   &__error{
     color: red;

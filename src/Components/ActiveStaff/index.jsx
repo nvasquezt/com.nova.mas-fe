@@ -1,24 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './ActiveStaff.scss';
 
 const ActiveStaff = (props) => {
   const { idVehicleFk, name, lastName, jobPosition, picProfile } = props.user;
   return (
     <div className="actStaff">
       <div className="actStaff__picContainer">
-        <img src={picProfile} alt={name} />
+        <img className="actStaff__picContainer--pic" src={picProfile} alt={name} />
       </div>
-      <div className="actStaff__mainTitle">
-        <h3>
-          Ambulance Crew # A-0
-          {idVehicleFk < 10 ? `0${idVehicleFk}` : `${idVehicleFk}`}
-        </h3>
-      </div>
-      <div className="actStaff__fullName">
-        <h3>{name}</h3> <h3>{lastName}</h3>
-      </div>
-      <div className="actStaff__jobPosition">
-        <h5>Area: {jobPosition}</h5>
+      <div className="actStaff__text">
+      <h2>Ambulance Crew: A-0
+          {idVehicleFk < 10 ? `0${idVehicleFk}` : `${idVehicleFk}`}</h2>
+      <p>
+        <strong>Name:</strong> {name} {lastName} <br />
+        <strong>Job Position:</strong> {jobPosition}
+      </p>
       </div>
     </div>
   );
