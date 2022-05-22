@@ -4,27 +4,24 @@ import PrevMaintenance from 'src/Components/PrevMaintenance';
 import SpecMaintenance from 'src/Components/SpecMaintenance';
 import Button from 'src/Components/Button';
 import { Link } from 'react-router-dom';
-import { HOME_ROUTE, VEHICLEPAGE_ROUTE } from 'src/Constants';
+import { HOME_ROUTE } from 'src/Constants';
 
 const MaintenancesPage = () => {
   return (
-    <div>
-      <div>
+    <div className="maintenancesPage">
+      <div className="maintenancesPage__title">
         <h1>Maintenances</h1>
       </div>
-      <div>
+      <div className="maintenancesPage__prevMaintContainer">
         <PrevMaintenance />
       </div>
-      <div>
+      <div className="maintenancesPage__ctvMaintContainer">
         <CtvMaintenance />
       </div>
-      <div>
+      <div className="maintenancesPage__specMaintContainer">
         <SpecMaintenance />
       </div>
-      <div>
-        <Link to={VEHICLEPAGE_ROUTE}>
-          <Button type={'button'} name={'Vehicle detail'} />
-        </Link>
+      <div className="maintenancesPage__buttonsContainer">
         <Link to={HOME_ROUTE}>
           <Button type={'button'} name={'Home'} />
         </Link>

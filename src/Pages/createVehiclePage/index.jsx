@@ -1,24 +1,21 @@
 import React from 'react';
 import Button from 'src/Components/Button';
 import { Link } from 'react-router-dom';
-import { HOME_ROUTE, VEHICLEPAGE_ROUTE } from 'src/Constants';
+import { HOME_ROUTE } from 'src/Constants';
 import FormCreateVehicle from 'src/Components/FormCreateVehicle';
 
 const CreateVehiclePage = () => {
   return (
-    <div>
-      <div>
+    <div className="createVehiclePage">
+      <div className="createVehiclePage__title">
         <h1>Create Vehicle</h1>
       </div>
-      <div>
+      <div className="createVehiclePage__formCointainer">
         <FormCreateVehicle />
       </div>
-      <div>
+      <div className="createVehiclePage__buttonsContainer">
         <Link to={HOME_ROUTE}>
           <Button type={'button'} name={'Home'} />
-        </Link>
-        <Link to={VEHICLEPAGE_ROUTE}>
-          <Button type={'button'} name={'Vehicle detail'} />
         </Link>
       </div>
     </div>

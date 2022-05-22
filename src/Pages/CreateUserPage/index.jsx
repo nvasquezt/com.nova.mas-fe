@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 
 const CreateUserPage = () => {
   return (
-    <div>
-      <div>
+    <div className="createUserPage">
+      <div className="createUserPage__title">
         <h1>Create User</h1>
       </div>
-      <div>
+      <div className="createUserPage__formCointainer">
         <FormCreateUser />
       </div>
-      <div>
+      <div className="createUserPage__buttonsContainer">
         <Link to={HOME_ROUTE}>
           <Button type={'button'} name={'Home'} />
         </Link>

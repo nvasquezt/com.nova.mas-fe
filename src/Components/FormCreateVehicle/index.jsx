@@ -7,7 +7,7 @@ import { HOME_ROUTE } from 'src/Constants';
 const FormCreateVehicle = () => {
   const [formStatus, setFormStatus] = useState(false);
   return (
-    <div>
+    <div className='formCreateVehicle'>
       <Formik
         initialValues={{
           id: 0,
@@ -82,7 +82,7 @@ const FormCreateVehicle = () => {
       >
         {({ errors }) => (
           <Form>
-            <div>
+            <div className='formCreateVehicle__form'>
               <label htmlFor="id">Ambulance Number</label>
               <Field name="id" type="text" />
               <ErrorMessage

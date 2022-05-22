@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getAnnotationByIdThunk } from 'src/Store/actions';
 import { useSelector, useDispatch } from 'react-redux';
 import Button from '../Button';
+import PropTypes from 'prop-types';
 
 const Annotations = (props) => {
   const id = props.idUser;
@@ -15,13 +15,13 @@ const Annotations = (props) => {
   }, [dispatch]);
 
   return (
-    <div>
-      <div>
+    <div className='annotations'>
+      <div className='annotations__title'>
         <h1>Annotations</h1>
       </div>
       {annotationById.map((annotation) =>
         annotationById ? (
-          <div key={annotation.idAnnotation}>
+          <div  className='annotations__info' key={annotation.idAnnotation}>
             <p>
               <strong>ID Number:</strong> {annotation.idAnnotation} <br />
               <strong>Date:</strong> {annotation.date} <br />
@@ -35,6 +35,10 @@ const Annotations = (props) => {
       </Link>
     </div>
   );
+};
+
+Annotations.propTypes = {
+  idUser: PropTypes.number.isRequired,
 };
 
 export default Annotations;

@@ -7,11 +7,11 @@ import { Link, useParams } from 'react-router-dom';
 const CreateAnnotations = () => {
   const id = useParams().id;
   return (
-    <div>
-      <div>
+    <div className='formAnnotation'>
+      <div className='formAnnotation__form'>
         <FormCreateAnnotation />
       </div>
-      <div>
+      <div className='formAnnotation__buttonsContainer'>
         <Link to={`/crewpage/${id}`}>
           <Button type={'button'} name={'User detail'} />
         </Link>

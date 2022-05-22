@@ -10,14 +10,14 @@ const ExpirableDates = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <div>
+    <div className='expirableDates'>
+      <div className='expirableDates__title'>
         <h1>Soon to expire</h1>
       </div>
-      <div>
+      <div className='expirableDates__info'>
         {allDates.map((date) => (
           <div key={date.dateCode}>
-            <div>
+            <div className='expirableDates__info'>
               <p>
                 <strong>Date code:</strong> {date.dateCode}
                 <strong>Ambulance: </strong> {date.idVehicleFk}

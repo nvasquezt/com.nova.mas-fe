@@ -17,12 +17,12 @@ const Home = () => {
     dispatch(getAllUsersThunk());
   }, [dispatch]);
   return (
-    <div>
-      <div>
-        <div>
+    <div className="home">
+      <div className="home__activeVehicles">
+        <div className="home__activeVehicles--title">
           <h1>Active Vehicles</h1>
         </div>
-        <div>
+        <div className="home__activeVehicles--container">
           {allVehicles.slice(1).map((vehicle) => (
             <Link key={vehicle.id} to={`/vehiclepage/${vehicle.id}`}>
               <CardVehicle key={vehicle.id} vehicle={vehicle} />
@@ -30,11 +30,11 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div>
-        <div>
+      <div className="home__activeStaff">
+        <div className="home__activeStaff--title">
           <h1>Active Staff</h1>
         </div>
-        <div>
+        <div className="home__activeStaff--container">
           {allUsers.slice(1).map((user) => (
             <Link key={user.idUser} to={`/crewpage/${user.idUser}`}>
               <ActiveStaff key={user.idUser} user={user} />
@@ -42,10 +42,10 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div>
+      <div className="home__expirableDates">
         <ExpirableDates />
       </div>
-      <div>
+      <div className="home__buttonsContainer">
         <Link to={CREATEVEHICLE_ROUTE}>
           <Button type={'button'} name={'Add new ambulance'} />
         </Link>

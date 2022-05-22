@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Button from 'src/Components/Button';
 import DatesByVehicles from 'src/Components/datesByVehicles';
 import MapLogs from 'src/Components/MapLogs';
-import { HOME_ROUTE, MAINTENANCE_ROUTE } from 'src/Constants';
+import { HOME_ROUTE } from 'src/Constants';
 import { getVehicleByIdThunk } from 'src/Store/actions';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -26,14 +26,14 @@ const VehiclePage = () => {
     dispatch(getVehicleByIdThunk(id));
   }, [dispatch, id]);
   return (
-    <div>
-      <div>
+    <div className="vehiclePage">
+      <div className="vehiclePage__title">
         <h1>Ambulance A-0{id < 10 ? `0${id}` : `${id}`}</h1>
       </div>
-      <div>
+      <div className="vehiclePage__picAmbulance">
         <img src={picVehicle} alt="ambulance" />
       </div>
-      <div>
+      <div className="vehiclePage__info">
         <p>
           <strong>License Plate:</strong> {licensePlate}
           {<br />}
@@ -52,16 +52,16 @@ const VehiclePage = () => {
           <strong>Vehicle Phone:</strong> {vehiclePhone}
         </p>
       </div>
-      <div>
+      <div className="vehiclePage__DatesByVehicleContainer">
         <DatesByVehicles />
       </div>
-      <div>
+      <div className="vehiclePage__mapLogsContainer">
         <MapLogs />
       </div>
-      <div>
+      <div className="vehiclePage__buttonsContainer">
         <Button type={'button'} name={'Edit this vehicle'} />
         <Button type={'button'} name={'Routes'} />
-        <Link to={MAINTENANCE_ROUTE}>
+        <Link to={`/maintenances/${id}`}>
           <Button type={'button'} name={'Maintenances'} />
         </Link>
         <Link to={HOME_ROUTE}>

@@ -18,16 +18,16 @@ const CrewPage = () => {
     userById;
 
   return (
-    <div>
-      <div>
+    <div className="crewPage">
+      <div className="crewPage__title">
         <img src={picProfile} alt={name} />
       </div>
-      <div>
+      <div className="crewPage__title">
         <h1>
           {name} {lastName}
         </h1>
       </div>
-      <div>
+      <div className="crewPage__info">
         <p>
           <strong>ID Number:</strong> {id} <br />
           <strong>Job Position:</strong> {jobPosition} <br />
@@ -36,10 +36,10 @@ const CrewPage = () => {
           <strong>Status:</strong> {status ? 'Active' : 'Inactive'} <br />
         </p>
       </div>
-      <div>
+      <div className="crewPage__annotationsContainer">
         <Annotations idUser={id} />
       </div>
-      <div>
+      <div className="crewPage__buttonsContainer">
         <Link to={'/home'}>
           <Button type={'button'} name={'Home'} />
         </Link>

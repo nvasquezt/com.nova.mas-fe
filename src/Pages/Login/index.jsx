@@ -10,9 +10,11 @@ const Login = () => {
     return <h1>You are logged in</h1>;
   }
   return (
-    <div>
-      <div>Login</div>
-      <div>
+    <div className="login">
+      <div className="login__title">
+        <h1>Login</h1>
+      </div>
+      <div className="login__formContainer">
         <Formik
           initialValues={{ userId: '', password: '' }}
           validate={(values) => {
@@ -41,7 +43,7 @@ const Login = () => {
         >
           {({ errors }) => (
             <Form>
-              <div>
+              <div className="login__formContainer--inputs">
                 <label htmlFor="userId">User</label>
                 <Field name="userId" type="text" />
                 <ErrorMessage

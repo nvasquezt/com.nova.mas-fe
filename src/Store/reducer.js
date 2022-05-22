@@ -6,6 +6,9 @@ const initialState = {
   annotationById: [],
   allDates: [],
   dateByIdVehicle: {},
+  ctvMaintenance: [],
+  prevMaintenance: [],
+  specMaintenance: [],
 };
 
 export default function reducer(state = initialState, action) {
@@ -44,6 +47,21 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         dateByIdVehicle: action.payload,
+      };
+    case 'GET_CTV_MAINTENANCE_BY_ID':
+      return {
+        ...state,
+        ctvMaintenance: action.payload,
+      };
+    case 'GET_PREV_MAINTENANCE_BY_ID':
+      return {
+        ...state,
+        prevMaintenance: action.payload,
+      };
+    case 'GET_SPEC_MAINTENANCE_BY_ID':
+      return {
+        ...state,
+        specMaintenance: action.payload,
       };
     default:
       return state;
