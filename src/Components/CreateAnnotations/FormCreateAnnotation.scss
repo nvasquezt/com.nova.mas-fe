@@ -1,0 +1,45 @@
+.formAnnotation{
+  display: block;
+
+  &__formCointainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: rgba(27, 27, 27, 0.299);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1rem;
+  }
+
+  &__formCointainer{
+      &--field{
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        height: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: rgba(238, 238, 238, 0.658);
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        padding: 1rem;
+      }
+    
+  }
+
+  &__error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+}

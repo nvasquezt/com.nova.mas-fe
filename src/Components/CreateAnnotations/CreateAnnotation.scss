@@ -1,0 +1,12 @@
+.formAnnotation {
+    &__form{
+        padding: 3rem;
+    }
+    &__buttonsContainer {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+        margin-top: 1rem;
+    }
+}

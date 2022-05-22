@@ -1,14 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
-import Button from 'src/Components/Button';
 import { createAnnotation } from 'src/services/annotationServices';
 import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { getUserByIdThunk } from 'src/Store/actions';
+import Button from 'src/Components/Button';
+import './FormCreateAnnotation.scss';
 
 const FormCreateAnnotation = () => {
+  const user = useSelector((state) => state.userById);
   const id = useParams().id;
   const [formStatus, setFormStatus] = useState(false);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUserByIdThunk(id));
+  }, [dispatch]);
+
   return (
     <div className="formAnnotation">
+      <div>
+        <h2>Create Annotation</h2>
+        <p>
+          Please register here Annotations for the crew member {user.name} {user.lastName}
+        </p>
+      </div>
       <Formik
         initialValues={{
           idUserFk: id,
@@ -38,15 +53,15 @@ const FormCreateAnnotation = () => {
           <Form>
             <div className="formAnnotation__formCointainer">
               <label htmlFor="description">Description</label>
-              <Field name="description" id="description" cols="30" rows="10" />
+              <Field as="textarea" className="formAnnotation__formCointainer--field" name="description" id="description" cols="100" rows="10" />
               <ErrorMessage
                 name="description"
                 component={() => (
-                  <div className="error">{errors.description}</div>
+                  <div className="formAnnotation__error">{errors.description}</div>
                 )}
               />
+              <Button type={'submit'} name={'Create'} />
             </div>
-            <Button type={'submit'} name={'Create'} />
             {formStatus && (
               <div className="formAnnotation__error">
                 Error while adding annotation

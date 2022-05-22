@@ -3,6 +3,7 @@ import FormCreateAnnotation from './FormCreateAnnotation';
 import Button from '../Button';
 import { HOME_ROUTE } from '../../Constants';
 import { Link, useParams } from 'react-router-dom';
+import './CreateAnnotation.scss';
 
 const CreateAnnotations = () => {
   const id = useParams().id;
