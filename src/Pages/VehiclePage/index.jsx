@@ -6,6 +6,7 @@ import MapLogs from 'src/Components/MapLogs';
 import { HOME_ROUTE } from 'src/Constants';
 import { getVehicleByIdThunk } from 'src/Store/actions';
 import { useSelector, useDispatch } from 'react-redux';
+import './VehiclePage.scss';
 
 const VehiclePage = () => {
   const id = useParams().id;
@@ -28,10 +29,10 @@ const VehiclePage = () => {
   return (
     <div className="vehiclePage">
       <div className="vehiclePage__title">
-        <h1>Ambulance A-0{id < 10 ? `0${id}` : `${id}`}</h1>
+        <h1>🚑  Ambulance A-0{id < 10 ? `0${id}` : `${id}`}</h1>
       </div>
       <div className="vehiclePage__picAmbulance">
-        <img src={picVehicle} alt="ambulance" />
+        <img className="vehiclePage__picAmbulance--pic" src={picVehicle} alt="ambulance" />
       </div>
       <div className="vehiclePage__info">
         <p>
@@ -51,6 +52,9 @@ const VehiclePage = () => {
           {<br />}
           <strong>Vehicle Phone:</strong> {vehiclePhone}
         </p>
+      </div>
+      <div className="datesByVhehicle__title">
+        <h1>📅  Dates of vehicle A-0{id < 10 ? `0${id}` : `${id}`}</h1>
       </div>
       <div className="vehiclePage__DatesByVehicleContainer">
         <DatesByVehicles />

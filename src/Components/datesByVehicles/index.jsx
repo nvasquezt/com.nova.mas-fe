@@ -16,9 +16,6 @@ const DatesByVehicles = () => {
   const { soatCode, insurancePolicy, rtmCode } = selectedVehicle;
   return (
     <div className="datesByVhehicle">
-      <div className="datesByVhehicle__title">
-        <h1>Dates of vehicle A-0{id < 10 ? `0${id}` : `${id}`}</h1>
-      </div>
       <div className="datesByVhehicle__info">
         <div className="datesByVhehicle__info--soat">
           <h3>SOAT Secure Date</h3>
