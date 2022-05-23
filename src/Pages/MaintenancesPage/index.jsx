@@ -5,6 +5,7 @@ import SpecMaintenance from 'src/Components/SpecMaintenance';
 import Button from 'src/Components/Button';
 import { Link } from 'react-router-dom';
 import { HOME_ROUTE } from 'src/Constants';
+import './MaintenancesPage.scss';
 
 const MaintenancesPage = () => {
   return (

@@ -21,12 +21,12 @@ const CrewPage = () => {
   return (
     <div className="crewPage">
       <div className="crewPage__title">
-        <img src={picProfile} alt={name} />
-      </div>
-      <div className="crewPage__title">
         <h1>
           {name} {lastName}
         </h1>
+      </div>
+      <div className="crewPage__picUserContainer">
+        <img className="crewPage__picUserContainer--pic" src={picProfile} alt={name} />
       </div>
       <div className="crewPage__info">
         <p>
