@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Button from 'src/Components/Button';
 import { createUser } from 'src/services/userServices';
 import { HOME_ROUTE } from 'src/Constants';
+import './FormCreateUser.scss';
 
 const FormCreateUser = () => {
   const [formStatus, setFormStatus] = useState(false);
@@ -64,63 +65,81 @@ const FormCreateUser = () => {
         {({ errors }) => (
           <Form>
             <div className="formCreateUser__form">
-              <label htmlFor="idUser"> ID User </label>
+              <div className="formCreateUser__form--label">
+                <label htmlFor="idUser"> ID User </label>
+                <ErrorMessage
+                  name="idUser"
+                  component={() => <div className="formCreateUser__form--error">{errors.idUser}</div>}
+                />
+              </div>
               <Field type="text" name="idUser" />
-              <ErrorMessage
-                name="idUser"
-                component={() => <div className="error">{errors.idUser}</div>}
-              />
-              <label htmlFor="idVehicleFk"> Ambulance Number </label>
-              <Field type="number" name="idVehicleFk" />
-              <ErrorMessage
+              <div className="formCreateUser__form--label">
+                <label htmlFor="idVehicleFk"> Ambulance Number </label>
+                <ErrorMessage
                 name="idVehicleFk"
                 component={() => (
-                  <div className="error">{errors.idVehicleFk}</div>
+                  <div className="formCreateUser__form--error">{errors.idVehicleFk}</div>
                 )}
-              />
-              <label htmlFor="name"> Name </label>
+                />
+              </div>
+              <Field type="number" name="idVehicleFk" />
+              <div className="formCreateUser__form--label">
+                <label htmlFor="name"> Name </label>
+                <ErrorMessage
+                  name="name"
+                  component={() => <div className="formCreateUser__form--error">{errors.name}</div>}
+                />
+              </div>
               <Field type="text" name="name" />
-              <ErrorMessage
-                name="name"
-                component={() => <div className="error">{errors.name}</div>}
-              />
-              <label htmlFor="lastName"> Last Name </label>
+              <div className="formCreateUser__form--label">
+                <label htmlFor="lastName"> Last Name </label>
+                <ErrorMessage
+                  name="lastName"
+                  component={() => <div className="formCreateUser__form--error">{errors.lastName}</div>}
+                />
+              </div>
               <Field type="text" name="lastName" />
-              <ErrorMessage
-                name="lastName"
-                component={() => <div className="error">{errors.lastName}</div>}
-              />
-              <label htmlFor="userPhone"> Phone </label>
+              <div className="formCreateUser__form--label">
+                <label htmlFor="userPhone"> Phone </label>              
+                <ErrorMessage
+                  name="userPhone"
+                  component={() => (
+                    <div className="formCreateUser__form--error">{errors.userPhone}</div>
+                  )}
+                />
+              </div>
               <Field type="text" name="userPhone" />
-              <ErrorMessage
-                name="userPhone"
-                component={() => (
-                  <div className="error">{errors.userPhone}</div>
-                )}
-              />
-              <label htmlFor="email"> Email </label>
+              <div className="formCreateUser__form--label">
+                <label htmlFor="email"> Email </label>
+                <ErrorMessage
+                  name="email"
+                  component={() => <div className="formCreateUser__form--error">{errors.email}</div>}
+                />
+              </div>
               <Field type="email" name="email" />
-              <ErrorMessage
-                name="email"
-                component={() => <div className="error">{errors.email}</div>}
-              />
-              <label htmlFor="password"> Password </label>
+              <div className="formCreateUser__form--label">
+                <label htmlFor="password"> Password </label>
+                <ErrorMessage
+                  name="password"
+                  component={() => <div className="formCreateUser__form--error">{errors.password}</div>}
+                />
+              </div>
               <Field type="password" name="password" />
-              <ErrorMessage
-                name="password"
-                component={() => <div className="error">{errors.password}</div>}
-              />
-              <label htmlFor="jobPosition"> Job Position </label>
+              <div className="formCreateUser__form--label">
+                <label htmlFor="jobPosition"> Job Position </label>
+                <ErrorMessage
+                  name="jobPosition"
+                  component={() => (
+                    <div className="formCreateUser__form--error">{errors.jobPosition}</div>
+                  )}
+                />
+              </div>
               <Field type="text" name="jobPosition" />
-              <ErrorMessage
-                name="jobPosition"
-                component={() => (
-                  <div className="error">{errors.jobPosition}</div>
-                )}
-              />
             </div>
-            <Button type="submit" name={'Submit'} />
-            {formStatus && <div className="error">Error creating user</div>}
+            <div className="formCreateUser__button">
+              <Button type="submit" name={'Submit'} />
+              {formStatus && <div className="formCreateUser__form--error">Error creating user</div>}
+            </div>
           </Form>
         )}
       </Formik>

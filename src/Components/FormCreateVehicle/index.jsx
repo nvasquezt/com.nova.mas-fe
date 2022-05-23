@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Button from 'src/Components/Button';
 import { createVehicle } from 'src/services/vehicleServices';
 import { HOME_ROUTE } from 'src/Constants';
+import './FormCreateVehicle.scss';
 
 const FormCreateVehicle = () => {
   const [formStatus, setFormStatus] = useState(false);
@@ -83,87 +84,113 @@ const FormCreateVehicle = () => {
         {({ errors }) => (
           <Form>
             <div className="formCreateVehicle__form">
+              <div className="formCreateVehicle__form--label">
               <label htmlFor="id">Ambulance Number</label>
-              <Field name="id" type="text" />
               <ErrorMessage
                 name="id"
-                component={() => <div className="error">{errors.id}</div>}
+                component={() => <div className="formCreateVehicle__form--error">{errors.id}</div>}
               />
+            </div>
+            <Field name="id" type="text" />
+            <div className="formCreateVehicle__form--label">
               <label htmlFor="licensePlate">License Plate</label>
-              <Field name="licensePlate" type="text" />
               <ErrorMessage
                 name="licensePlate"
                 component={() => (
-                  <div className="error">{errors.licensePlate}</div>
-                )}
-              />
-              <label htmlFor="brand">Brand</label>
-              <Field name="brand" type="text" />
-              <ErrorMessage
-                name="brand"
-                component={() => <div className="error">{errors.brand}</div>}
-              />
-              <label htmlFor="modelAge">Model Age</label>
-              <Field name="modelAge" type="text" />
-              <ErrorMessage
-                name="modelAge"
-                component={() => <div className="error">{errors.modelAge}</div>}
-              />
-              <label htmlFor="classCar">Class Car</label>
-              <Field name="classCar" type="text" />
-              <ErrorMessage
-                name="classCar"
-                component={() => <div className="error">{errors.classCar}</div>}
-              />
-              <label htmlFor="fuelType">Fuel Type</label>
-              <Field name="fuelType" type="text" />
-              <ErrorMessage
-                name="fuelType"
-                component={() => <div className="error">{errors.fuelType}</div>}
-              />
-              <label htmlFor="cylinder">Cylinder</label>
-              <Field name="cylinder" type="text" />
-              <ErrorMessage
-                name="cylinder"
-                component={() => <div className="error">{errors.cylinder}</div>}
-              />
-              <label htmlFor="capacity">Capacity</label>
-              <Field name="capacity" type="text" />
-              <ErrorMessage
-                name="capacity"
-                component={() => <div className="error">{errors.capacity}</div>}
-              />
-              <label htmlFor="soatCode">Soat Code</label>
-              <Field name="soatCode" type="text" />
-              <ErrorMessage
-                name="soatCode"
-                component={() => <div className="error">{errors.soatCode}</div>}
-              />
-              <label htmlFor="rtmCode">Rtm Code</label>
-              <Field name="rtmCode" type="text" />
-              <ErrorMessage
-                name="rtmCode"
-                component={() => <div className="error">{errors.rtmCode}</div>}
-              />
-              <label htmlFor="insurancePolicy">Insurance Policy</label>
-              <Field name="insurancePolicy" type="text" />
-              <ErrorMessage
-                name="insurancePolicy"
-                component={() => (
-                  <div className="error">{errors.insurancePolicy}</div>
-                )}
-              />
-              <label htmlFor="vehiclePhone">Vehicle Phone</label>
-              <Field name="vehiclePhone" type="text" />
-              <ErrorMessage
-                name="vehiclePhone"
-                component={() => (
-                  <div className="error">{errors.vehiclePhone}</div>
+                  <div className="formCreateVehicle__form--error">{errors.licensePlate}</div>
                 )}
               />
             </div>
-            <Button type="submit" name={'Submit'} />
-            {formStatus && <div className="error">Error</div>}
+            <Field name="licensePlate" type="text" />
+            <div className="formCreateVehicle__form--label">
+              <label htmlFor="brand">Brand</label>
+              <ErrorMessage
+                name="brand"
+                component={() => <div className="formCreateVehicle__form--error">{errors.brand}</div>}
+              />
+            </div>
+            <Field name="brand" type="text" />
+            <div className="formCreateVehicle__form--label">
+              <label htmlFor="modelAge">Model Age</label>
+              <ErrorMessage
+                name="modelAge"
+                component={() => <div className="formCreateVehicle__form--error">{errors.modelAge}</div>}
+              />
+            </div>
+            <Field name="modelAge" type="text" />
+            <div className="formCreateVehicle__form--label">
+              <label htmlFor="classCar">Class Car</label>
+              <ErrorMessage
+                name="classCar"
+                component={() => <div className="formCreateVehicle__form--error">{errors.classCar}</div>}
+              />
+            </div>
+            <Field name="classCar" type="text" />
+            <div className="formCreateVehicle__form--label">
+              <label htmlFor="fuelType">Fuel Type</label>
+              <ErrorMessage
+                name="fuelType"
+                component={() => <div className="formCreateVehicle__form--error">{errors.fuelType}</div>}
+              />
+            </div>
+            <Field name="fuelType" type="text" />
+            <div className="formCreateVehicle__form--label">
+              <label htmlFor="cylinder">Cylinder</label>
+              <ErrorMessage
+                name="cylinder"
+                component={() => <div className="formCreateVehicle__form--error">{errors.cylinder}</div>}
+              />
+            </div>
+            <Field name="cylinder" type="text" />
+            <div className="formCreateVehicle__form--label">
+              <label htmlFor="capacity">Capacity</label>
+              <ErrorMessage
+                name="capacity"
+                component={() => <div className="formCreateVehicle__form--error">{errors.capacity}</div>}
+              />
+            </div>
+            <Field name="capacity" type="text" />
+            <div className="formCreateVehicle__form--label">
+              <label htmlFor="soatCode">Soat Code</label>
+              <ErrorMessage
+                name="soatCode"
+                component={() => <div className="formCreateVehicle__form--error">{errors.soatCode}</div>}
+              />
+            </div>
+            <Field name="soatCode" type="text" />
+            <div className="formCreateVehicle__form--label">
+              <label htmlFor="rtmCode">Rtm Code</label>
+              <ErrorMessage
+                name="rtmCode"
+                component={() => <div className="formCreateVehicle__form--error">{errors.rtmCode}</div>}
+              />
+            </div>
+            <Field name="rtmCode" type="text" />
+            <div className="formCreateVehicle__form--label">
+              <label htmlFor="insurancePolicy">Insurance Policy</label>
+              <ErrorMessage
+                name="insurancePolicy"
+                component={() => (
+                  <div className="formCreateVehicle__form--error">{errors.insurancePolicy}</div>
+                )}
+              />
+            </div>
+            <Field name="insurancePolicy" type="text" />
+            <div className="formCreateVehicle__form--label">
+              <label htmlFor="vehiclePhone">Vehicle Phone</label>
+              <ErrorMessage
+                name="vehiclePhone"
+                component={() => (
+                  <div className="formCreateVehicle__form--error">{errors.vehiclePhone}</div>
+                )}
+              />
+            </div>
+            <Field name="vehiclePhone" type="text" />
+            </div>
+            <div className="formCreateVehicle__button">
+              <Button type="submit" name={'Submit'} />
+              {formStatus && <div className="formCreateVehicle__form--error">Error</div>}
+            </div>
           </Form>
         )}
       </Formik>

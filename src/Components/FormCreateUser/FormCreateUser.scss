@@ -1,0 +1,38 @@
+.formCreateUser {
+    margin: 0 auto;
+    width: 46%;
+    height: 100%;
+    background-color: rgba(27, 27, 27, 0.299);
+    padding: 1rem;
+    border-radius: 10px;
+
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        width: 60%;
+        height: 50%;
+        padding: 1rem;
+        gap: 0.5rem;
+
+        &--label {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &--error {
+            color: red;
+        }
+    }
+
+    &__button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        color: white;
+    }
+}
