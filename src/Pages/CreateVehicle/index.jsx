@@ -5,7 +5,7 @@ import { HOME_ROUTE } from 'src/Constants';
 import FormCreateVehicle from 'src/Components/FormCreateVehicle';
 import './CreateVehiclePage.scss';
 
-const CreateVehiclePage = () => {
+const CreateVehicle = () => {
   return (
     <div className="createVehiclePage">
       <div className="createVehiclePage__title">
@@ -23,4 +23,4 @@ const CreateVehiclePage = () => {
   );
 };
 
-export default CreateVehiclePage;
+export default CreateVehicle;

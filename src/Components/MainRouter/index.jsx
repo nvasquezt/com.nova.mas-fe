@@ -16,7 +16,7 @@ import Login from 'src/Pages/Login';
 import CrewPage from 'src/Pages/CrewPage';
 import VehiclePage from 'src/Pages/VehiclePage';
 import MaintenancesPage from 'src/Pages/MaintenancesPage';
-import CreateVehiclePage from 'src/Pages/CreateVehiclePage';
+import CreateVehicle from 'src/Pages/CreateVehicle';
 import CreateUserPage from 'src/Pages/CreateUserPage';
 import CreateAnnotations from '../CreateAnnotations';
 
@@ -30,7 +30,7 @@ const MainRouter = () => {
         <Route path={CREW_ROUTE} element={<CrewPage />} />
         <Route path={VEHICLEPAGE_ROUTE} element={<VehiclePage />} />
         <Route path={MAINTENANCE_ROUTE} element={<MaintenancesPage />} />
-        <Route path={CREATEVEHICLE_ROUTE} element={<CreateVehiclePage />} />
+        <Route path={CREATEVEHICLE_ROUTE} element={<CreateVehicle />} />
         <Route path={CREATEUSER_ROUTE} element={<CreateUserPage />} />
         <Route path={NEWANNOTATION_ROUTE} element={<CreateAnnotations />} />
       </Routes>
