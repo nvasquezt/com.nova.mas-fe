@@ -69,17 +69,23 @@ const FormCreateUser = () => {
                 <label htmlFor="idUser"> ID User </label>
                 <ErrorMessage
                   name="idUser"
-                  component={() => <div className="formCreateUser__form--error">{errors.idUser}</div>}
+                  component={() => (
+                    <div className="formCreateUser__form--error">
+                      {errors.idUser}
+                    </div>
+                  )}
                 />
               </div>
               <Field type="text" name="idUser" />
               <div className="formCreateUser__form--label">
                 <label htmlFor="idVehicleFk"> Ambulance Number </label>
                 <ErrorMessage
-                name="idVehicleFk"
-                component={() => (
-                  <div className="formCreateUser__form--error">{errors.idVehicleFk}</div>
-                )}
+                  name="idVehicleFk"
+                  component={() => (
+                    <div className="formCreateUser__form--error">
+                      {errors.idVehicleFk}
+                    </div>
+                  )}
                 />
               </div>
               <Field type="number" name="idVehicleFk" />
@@ -87,7 +93,11 @@ const FormCreateUser = () => {
                 <label htmlFor="name"> Name </label>
                 <ErrorMessage
                   name="name"
-                  component={() => <div className="formCreateUser__form--error">{errors.name}</div>}
+                  component={() => (
+                    <div className="formCreateUser__form--error">
+                      {errors.name}
+                    </div>
+                  )}
                 />
               </div>
               <Field type="text" name="name" />
@@ -95,16 +105,22 @@ const FormCreateUser = () => {
                 <label htmlFor="lastName"> Last Name </label>
                 <ErrorMessage
                   name="lastName"
-                  component={() => <div className="formCreateUser__form--error">{errors.lastName}</div>}
+                  component={() => (
+                    <div className="formCreateUser__form--error">
+                      {errors.lastName}
+                    </div>
+                  )}
                 />
               </div>
               <Field type="text" name="lastName" />
               <div className="formCreateUser__form--label">
-                <label htmlFor="userPhone"> Phone </label>              
+                <label htmlFor="userPhone"> Phone </label>
                 <ErrorMessage
                   name="userPhone"
                   component={() => (
-                    <div className="formCreateUser__form--error">{errors.userPhone}</div>
+                    <div className="formCreateUser__form--error">
+                      {errors.userPhone}
+                    </div>
                   )}
                 />
               </div>
@@ -113,7 +129,11 @@ const FormCreateUser = () => {
                 <label htmlFor="email"> Email </label>
                 <ErrorMessage
                   name="email"
-                  component={() => <div className="formCreateUser__form--error">{errors.email}</div>}
+                  component={() => (
+                    <div className="formCreateUser__form--error">
+                      {errors.email}
+                    </div>
+                  )}
                 />
               </div>
               <Field type="email" name="email" />
@@ -121,7 +141,11 @@ const FormCreateUser = () => {
                 <label htmlFor="password"> Password </label>
                 <ErrorMessage
                   name="password"
-                  component={() => <div className="formCreateUser__form--error">{errors.password}</div>}
+                  component={() => (
+                    <div className="formCreateUser__form--error">
+                      {errors.password}
+                    </div>
+                  )}
                 />
               </div>
               <Field type="password" name="password" />
@@ -130,7 +154,9 @@ const FormCreateUser = () => {
                 <ErrorMessage
                   name="jobPosition"
                   component={() => (
-                    <div className="formCreateUser__form--error">{errors.jobPosition}</div>
+                    <div className="formCreateUser__form--error">
+                      {errors.jobPosition}
+                    </div>
                   )}
                 />
               </div>
@@ -138,7 +164,11 @@ const FormCreateUser = () => {
             </div>
             <div className="formCreateUser__button">
               <Button type="submit" name={'Submit'} />
-              {formStatus && <div className="formCreateUser__form--error">Error creating user</div>}
+              {formStatus && (
+                <div className="formCreateUser__form--error">
+                  Error creating user
+                </div>
+              )}
             </div>
           </Form>
         )}

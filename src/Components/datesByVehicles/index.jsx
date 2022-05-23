@@ -39,7 +39,7 @@ const DatesByVehicles = () => {
           <p>
             <strong>Code: </strong> {rtmCode} <br />
             <strong>Expire Date: </strong> {legalRevisionDate} <br />
-            </p>
+          </p>
         </div>
       </div>
     </div>

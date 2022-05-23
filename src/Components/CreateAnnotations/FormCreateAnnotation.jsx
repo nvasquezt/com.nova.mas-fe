@@ -21,7 +21,8 @@ const FormCreateAnnotation = () => {
       <div>
         <h2>Create Annotation</h2>
         <p>
-          Please register here Annotations for the crew member {user.name} {user.lastName}
+          Please register here Annotations for the crew member {user.name}{' '}
+          {user.lastName}
         </p>
       </div>
       <Formik
@@ -53,11 +54,20 @@ const FormCreateAnnotation = () => {
           <Form>
             <div className="formAnnotation__formCointainer">
               <label htmlFor="description">Description</label>
-              <Field as="textarea" className="formAnnotation__formCointainer--field" name="description" id="description" cols="100" rows="10" />
+              <Field
+                as="textarea"
+                className="formAnnotation__formCointainer--field"
+                name="description"
+                id="description"
+                cols="100"
+                rows="10"
+              />
               <ErrorMessage
                 name="description"
                 component={() => (
-                  <div className="formAnnotation__error">{errors.description}</div>
+                  <div className="formAnnotation__error">
+                    {errors.description}
+                  </div>
                 )}
               />
               <Button type={'submit'} name={'Create'} />

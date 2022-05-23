@@ -48,8 +48,8 @@ const CrewPage = () => {
           <Button type={'button'} name={'Home'} />
         </Link>
         <Link to={`/newannotation/${id}`}>
-        <Button type={'button'} name={'Add new annotation'} />
-      </Link>
+          <Button type={'button'} name={'Add new annotation'} />
+        </Link>
       </div>
     </div>
   );

@@ -7,7 +7,11 @@ const CardVehicle = (props) => {
   return (
     <div className="cardVehicle">
       <div className="cardVehicle__picContainer">
-        <img className="cardVehicle__picContainer--pic" src={picVehicle} alt={`ambulance A-${id}`} />
+        <img
+          className="cardVehicle__picContainer--pic"
+          src={picVehicle}
+          alt={`ambulance A-${id}`}
+        />
       </div>
       <div className="cardVehicle__info">
         <h1>Ambulance A-0{id < 10 ? `0${id}` : `${id}`}</h1>

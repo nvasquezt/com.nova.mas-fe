@@ -7,15 +7,21 @@ const ActiveStaff = (props) => {
   return (
     <div className="actStaff">
       <div className="actStaff__picContainer">
-        <img className="actStaff__picContainer--pic" src={picProfile} alt={name} />
+        <img
+          className="actStaff__picContainer--pic"
+          src={picProfile}
+          alt={name}
+        />
       </div>
       <div className="actStaff__text">
-      <h2>Ambulance Crew: A-0
-          {idVehicleFk < 10 ? `0${idVehicleFk}` : `${idVehicleFk}`}</h2>
-      <p>
-        <strong>Name:</strong> {name} {lastName} <br />
-        <strong>Job Position:</strong> {jobPosition}
-      </p>
+        <h2>
+          Ambulance Crew: A-0
+          {idVehicleFk < 10 ? `0${idVehicleFk}` : `${idVehicleFk}`}
+        </h2>
+        <p>
+          <strong>Name:</strong> {name} {lastName} <br />
+          <strong>Job Position:</strong> {jobPosition}
+        </p>
       </div>
     </div>
   );

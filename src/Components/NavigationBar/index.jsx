@@ -6,7 +6,7 @@ import './NavigationBar.scss';
 const NavigationBar = () => {
   if (sessionStorage.token) {
     return (
-      <nav className='navigationBar'>
+      <nav className="navigationBar">
         <NavLink to={HOME_ROUTE}>Home</NavLink>
         <Link
           to="/"

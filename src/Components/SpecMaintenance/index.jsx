@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { getSpecMaintenanceThunk } from 'src/Store/actions';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import './SpecMaintenance.scss'; 
+import './SpecMaintenance.scss';
 
 const SpecMaintenance = () => {
   const id = useParams().id;
