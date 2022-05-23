@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { getPrevMaintenanceThunk } from 'src/Store/actions';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import './PrevMaintenance.scss';
 
 const PrevMaintenance = () => {
   const id = useParams().id;
