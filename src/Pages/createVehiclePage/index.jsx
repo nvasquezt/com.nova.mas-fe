@@ -3,6 +3,7 @@ import Button from 'src/Components/Button';
 import { Link } from 'react-router-dom';
 import { HOME_ROUTE } from 'src/Constants';
 import FormCreateVehicle from 'src/Components/FormCreateVehicle';
+import './CreateVehiclePage.scss';
 
 const CreateVehiclePage = () => {
   return (

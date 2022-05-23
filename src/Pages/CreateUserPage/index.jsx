@@ -3,6 +3,7 @@ import FormCreateUser from 'src/Components/FormCreateUser';
 import { HOME_ROUTE } from 'src/Constants';
 import Button from 'src/Components/Button';
 import { Link } from 'react-router-dom';
+import './CreateUserPage.scss';
 
 const CreateUserPage = () => {
   return (
