@@ -53,11 +53,14 @@ const VehiclePage = () => {
           <strong>Vehicle Phone:</strong> {vehiclePhone}
         </p>
       </div>
-      <div className="datesByVhehicle__title">
+      <div className="vehiclePage__title">
         <h1>📅  Dates of vehicle A-0{id < 10 ? `0${id}` : `${id}`}</h1>
       </div>
       <div className="vehiclePage__DatesByVehicleContainer">
         <DatesByVehicles />
+      </div>
+      <div className="vehiclePage__title">
+        <h1>📍  Map of vehicle A-0{id < 10 ? `0${id}` : `${id}`}</h1>
       </div>
       <div className="vehiclePage__mapLogsContainer">
         <MapLogs />
