@@ -4,7 +4,8 @@ import { Icon } from 'leaflet';
 import './MapLogs.scss';
 
 const MapLogs = () => {
-  const position = [4.684335, -74.103644];
+  const position = [[4.684335, -74.113644], [4.684335, -74.123644], [4.684335, -74.133644]];
+  const center = [4.684335, -74.113644];
   const icon = new Icon({
     iconUrl:
       'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/images/marker-icon.png',
@@ -19,20 +20,23 @@ const MapLogs = () => {
   return (
     <div className="mapLogs">
       <MapContainer
-      center={position} 
-      zoom={11}
-      style={{ height: '70vh', width: '49vw' }}
-      scrollWheelZoom={false}
-        >
+        center={center}
+        zoom={11}
+        style={{ height: '70vh', width: '49vw' }}
+        scrollWheelZoom={false}
+      >
         <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        <Marker position={position} icon={icon}>
-          <Popup>
-            <strong>⌚Hora y fecha</strong>
-          </Popup>
-        </Marker>
+        {position.map((position, index) => (
+            <Marker position={position} key={index} icon={icon}>
+                <Popup>
+                    <strong>⌚Hora y fecha</strong>        
+                    <p>{position}</p>
+                </Popup>
+            </Marker>
+        ))}
       </MapContainer>
     </div>
   );
