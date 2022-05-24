@@ -7,6 +7,7 @@ import {
   prevMaintenanceService,
   specMaintenanceService,
 } from 'src/services/maintenancesServices';
+import { getTrackLogById } from 'src/services/trackLogsServices';
 
 export const getAllVehiclesAction = (vehicles) => ({
   type: 'ALL_VEHICLES',
@@ -47,6 +48,10 @@ export const prevMaintenanceByIdAction = (maintenance) => ({
 export const specMaintenanceByIdAction = (maintenance) => ({
   type: 'GET_SPEC_MAINTENANCE_BY_ID',
   payload: maintenance,
+});
+export const getTrackLogByIdAction = (trackLog) => ({
+  type: 'GET_TRACK_LOG_BY_ID',
+  payload: trackLog,
 });
 
 export const getAllVehiclesThunk = () => async (dispatch) => {
@@ -125,6 +130,14 @@ export const getSpecMaintenanceThunk = (id) => async (dispatch) => {
   try {
     const specMaintenance = await specMaintenanceService(id);
     dispatch(specMaintenanceByIdAction(specMaintenance));
+  } catch (error) {
+    console.log(error, 'error');
+  }
+};
+export const getTrackLogByIdThunk = (id) => async (dispatch) => {
+  try {
+    const trackLog = await getTrackLogById(id);
+    dispatch(getTrackLogByIdAction(trackLog));
   } catch (error) {
     console.log(error, 'error');
   }
