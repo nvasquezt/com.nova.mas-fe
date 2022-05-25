@@ -17,11 +17,22 @@ const MaintenancesPage = () => {
       <div className="maintenancesPage__prevMaintContainer">
         <PrevMaintenance />
       </div>
+      <div className="maintenancesPage__addMaintenance">
+        <Link to={`/addprevmaintenance/${id}`}>
+        <Button type="button" name="+ Preventive maintenance" />
+        </Link>
+      </div>
       <div className="maintenancesPage__ctvMaintContainer">
         <CtvMaintenance />
       </div>
+      <div className="maintenancesPage__addMaintenance">
+        <Button type="button" name="+ Corrective maintenance" />
+      </div>
       <div className="maintenancesPage__specMaintContainer">
         <SpecMaintenance />
+      </div>
+      <div className="maintenancesPage__addMaintenance">
+        <Button type="button" name="+ Especific maintenance" />
       </div>
       <div className="maintenancesPage__buttonsContainer">
         <Link to={HOME_ROUTE}>

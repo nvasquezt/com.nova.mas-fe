@@ -34,6 +34,9 @@ const DatesByVehicles = () => {
     dispatch(getDateByIdVehicleThunk(id));
   }, [dispatch]);
   const { soatDate, insuranceDate, legalRevisionDate } = dateByIdVehicle;
+  const newSoatDate = soatDate ? soatDate.split('T')[0] : '';
+  const newInsuranceDate = insuranceDate ? insuranceDate.split('T')[0] : '';
+  const newLegalRevisionDate = legalRevisionDate ? legalRevisionDate.split('T')[0] : '';
   const { soatCode, insurancePolicy, rtmCode } = selectedVehicle;
   return (
     <div className="datesByVhehicle">
@@ -42,21 +45,21 @@ const DatesByVehicles = () => {
           <h3>SOAT Secure Date</h3>
           <p>
             <strong>Code: </strong> {soatCode} <br />
-            <strong>Expire: </strong> {soatDate} <br />
+            <strong>Expire: </strong> {newSoatDate} <br />
           </p>
         </div>
         <div className="datesByVhehicle__info--insurance">
           <h3>Insurance Date</h3>
           <p>
             <strong>Code: </strong> {insurancePolicy} <br />
-            <strong>Expire: </strong> {insuranceDate} <br />
+            <strong>Expire: </strong> {newInsuranceDate} <br />
           </p>
         </div>
         <div className="datesByVhehicle__info--legalRevision">
           <h3>Legal revision Date</h3>
           <p>
             <strong>Code: </strong> {rtmCode} <br />
-            <strong>Expire: </strong> {legalRevisionDate} <br />
+            <strong>Expire: </strong> {newLegalRevisionDate} <br />
           </p>
         </div>
       </div>

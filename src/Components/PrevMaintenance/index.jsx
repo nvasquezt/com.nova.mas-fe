@@ -18,7 +18,7 @@ const PrevMaintenance = () => {
           Preventive Maintenances of ambulance A-0{id < 10 ? `0${id}` : `${id}`}
         </h1>
       </div>
-      {prevMaintenance > 0 ? (
+      {prevMaintenance.length > 0 ? (
         prevMaintenance.map((item) => (
           <div
             key={item.idMaintenance + 'prev'}
@@ -33,8 +33,8 @@ const PrevMaintenance = () => {
                 <br />
               </p>
             </div>
-            <div className="prevMaintenance__info--picCommInv">
-              <img src={item.commercialInvoice} alt="commercialInvoice" />
+            <div className="prevMaintenance__info">
+              <img className='prevMaintenance__info--picCommInv' src={item.commercialInvoice} alt="commercialInvoice" />
             </div>
           </div>
         ))

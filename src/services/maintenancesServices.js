@@ -50,3 +50,21 @@ export const specMaintenanceService = async (id) => {
     console.log(error, 'error');
   }
 };
+
+export const addMaintenanceService = async (data) => {
+  const token = sessionStorage.getItem('token');
+  try {
+    const response = await fetch(`${API_URL}/api/prevmaint`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(data),
+    });
+    const dataResponse = await response.json();
+    return dataResponse;
+  } catch (error) {
+    console.log(error, 'error');
+  }
+};

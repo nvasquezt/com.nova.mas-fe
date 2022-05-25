@@ -14,7 +14,7 @@ const EditVehicle = () => {
   const [formVehicle, setFormVehicle] = useState({
     licensePlate: selectedVehicle.licensePlate,
     brand: selectedVehicle.brand,
-    modelAge: selectedVehicle.modelAge,
+    modelAge: Number(selectedVehicle.modelAge),
     classCar: selectedVehicle.classCar,
     fuelType: selectedVehicle.fuelType,
     cylinder: selectedVehicle.cylinder,
@@ -80,6 +80,7 @@ const EditVehicle = () => {
     e.preventDefault();
     await updateVehicle(id, formVehicle);
     window.location.href = '/home';
+
   };
 
   useEffect(() => {
@@ -123,7 +124,7 @@ const EditVehicle = () => {
             <input type="checkbox" onChange={handleractivateModelAge} />
             <label htmlFor="modelAge">Model Age</label>
             <input
-              type="text"
+              type="number"
               name="modelAge"
               onChange={handleChange}
               defaultValue={selectedVehicle.modelAge}
