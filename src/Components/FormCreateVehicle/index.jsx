@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Button from 'src/Components/Button';
 import { createVehicle } from 'src/services/vehicleServices';
+import { createDate } from 'src/services/dateServices';
 import { HOME_ROUTE } from 'src/Constants';
 import './FormCreateVehicle.scss';
 
@@ -67,6 +68,11 @@ const FormCreateVehicle = () => {
           return errors;
         }}
         onSubmit={(values) => {
+          const createDateProcess = async () => {
+            const data ={idVehicleFk: values.id};
+            await createDate(data);
+          }
+          createDateProcess();
           const createVehicleProcess = async () => {
             values.id = Number(values.id);
             values.modelAge = Number(values.modelAge);

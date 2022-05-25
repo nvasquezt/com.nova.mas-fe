@@ -31,7 +31,6 @@ const CreateRoute = () => {
             return errors;
           }}
           onSubmit={(values) => {
-            console.log(values);
             const createTrackLogProcess = async () => {
               const response = await createTrackLog(values);
               if (response.message === 'Error while adding trackLog') {

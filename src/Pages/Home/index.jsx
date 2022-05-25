@@ -25,11 +25,10 @@ const Home = () => {
         </div>
         <div className="home__activeVehicles--container">
           {allVehicles.slice(1).map((vehicle) => (
-            vehicle.id && (
             <Link key={vehicle.id} to={`/vehiclepage/${vehicle.id}`}>
               <CardVehicle key={vehicle.id} vehicle={vehicle} />
             </Link>
-          )))}
+          ))}
         </div>
       </div>
       <div className="home__activeStaff">

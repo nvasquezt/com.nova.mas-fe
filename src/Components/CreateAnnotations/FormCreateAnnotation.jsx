@@ -39,7 +39,6 @@ const FormCreateAnnotation = () => {
         }}
         onSubmit={(values) => {
           const createAnnotationProcess = async () => {
-            console.log(values, 'values');
             const response = await createAnnotation(values);
             if (response.message === 'Error while adding annotation') {
               setFormStatus(true);

@@ -21,7 +21,6 @@ const MapLogs = () => {
       location: [Number(element.latitude), Number(element.longitude)],
     });
   });
-  console.log(positions);
   const center = [4.684335, -74.113644];
   const icon = new Icon({
     iconUrl:
