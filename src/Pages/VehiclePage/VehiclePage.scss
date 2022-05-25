@@ -5,29 +5,35 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    &__picAmbulance{
-        width: 100%;
-        height: 100%;
+    &__infoContainer{
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        &--pic{
-            width: 20%;
-            height: 20%;
-            border-radius: 5%;
+        gap: 1rem;
+        &--picAmbulance{
+            padding-left: 2rem;
+            width: 45rem;
+            height: 30rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-right: 2rem;
+            &--pic{
+                width: 100%;
+                height: 100%;
+                border-radius: 4%;
+            }
         }
-    }
-    &__info{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 83%;
-        height: 100%;
-        padding: 2rem;
-        margin: 2rem;
-        background-color: rgba(27, 27, 27, 0.299);
-        border-radius: 10px;
+        &--info{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 40rem;
+            height: 30rem;
+            padding-left: 1rem;
+            background-color: rgba(27, 27, 27, 0.299);
+            border-radius: 4%;
+            font-size: 1.5rem;
+        }
     }
 
     &__mapLogsContainer{
@@ -35,6 +41,17 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        height: 100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    &__buttonsContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
         width: 100%;
         height: 100%;
         margin-top: 2rem;

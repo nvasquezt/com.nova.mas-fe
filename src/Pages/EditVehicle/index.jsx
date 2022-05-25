@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import UploadPicVehicle from '../../Components/UploadPicVehicle';
 import { useDispatch, useSelector } from 'react-redux';
 import { getVehicleByIdThunk } from 'src/Store/actions';
+import { updateVehicle } from 'src/services/vehicleServices';
 import Button from 'src/Components/Button';
 import './EditVehicle.scss';
 
@@ -74,9 +75,11 @@ const EditVehicle = () => {
   const handleractivatevehiclePhone = () => {
     setActivatevehiclePhone(!activatevehiclePhone);
   };
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formVehicle);
+    await updateVehicle(id, formVehicle);
+    window.location.href = '/home';
   };
 
   useEffect(() => {

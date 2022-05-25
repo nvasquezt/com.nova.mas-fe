@@ -68,3 +68,21 @@ export const uploadVehicleImage = async (id, payload) => {
     console.log(error, 'error');
   }
 };
+
+export const updateVehicle = async (id, payload) => {
+  const token = sessionStorage.getItem('token');
+  try {
+    const response = await fetch(`${API_URL}/api/vehicles/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(payload),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error, 'error');
+  }
+};

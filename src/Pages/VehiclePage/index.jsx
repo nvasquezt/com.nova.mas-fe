@@ -31,31 +31,33 @@ const VehiclePage = () => {
       <div className="vehiclePage__title">
         <h1>🚑 Ambulance A-0{id < 10 ? `0${id}` : `${id}`}</h1>
       </div>
-      <div className="vehiclePage__picAmbulance">
-        <img
-          className="vehiclePage__picAmbulance--pic"
-          src={picVehicle}
-          alt="ambulance"
-        />
-      </div>
-      <div className="vehiclePage__info">
-        <p>
-          <strong>License Plate:</strong> {licensePlate}
-          {<br />}
-          <strong>Brand:</strong> {brand}
-          {<br />}
-          <strong>Model Age:</strong> {modelAge}
-          {<br />}
-          <strong>Class:</strong> {classCar}
-          {<br />}
-          <strong>Fuel Type:</strong> {fuelType}
-          {<br />}
-          <strong>Cylinder:</strong> {cylinder}
-          {<br />}
-          <strong>Capacity:</strong> {capacity}
-          {<br />}
-          <strong>Vehicle Phone:</strong> {vehiclePhone}
-        </p>
+      <div className="vehiclePage__infoContainer">
+        <div className="vehiclePage__infoContainer--picAmbulance">
+          <img
+            className="vehiclePage__infoContainer--picAmbulance--pic"
+            src={picVehicle}
+            alt="ambulance"
+          />
+        </div>
+        <div className="vehiclePage__infoContainer--info">
+          <p>
+            <strong>License Plate:</strong> {licensePlate}
+            {<br />}
+            <strong>Brand:</strong> {brand}
+            {<br />}
+            <strong>Model Age:</strong> {modelAge}
+            {<br />}
+            <strong>Class:</strong> {classCar}
+            {<br />}
+            <strong>Fuel Type:</strong> {fuelType}
+            {<br />}
+            <strong>Cylinder:</strong> {cylinder}
+            {<br />}
+            <strong>Capacity:</strong> {capacity}
+            {<br />}
+            <strong>Vehicle Phone:</strong> {vehiclePhone}
+          </p>
+        </div>
       </div>
       <div className="vehiclePage__title">
         <h1>📅 Dates of vehicle A-0{id < 10 ? `0${id}` : `${id}`}</h1>
