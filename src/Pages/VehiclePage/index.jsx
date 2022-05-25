@@ -29,10 +29,14 @@ const VehiclePage = () => {
   return (
     <div className="vehiclePage">
       <div className="vehiclePage__title">
-        <h1>🚑  Ambulance A-0{id < 10 ? `0${id}` : `${id}`}</h1>
+        <h1>🚑 Ambulance A-0{id < 10 ? `0${id}` : `${id}`}</h1>
       </div>
       <div className="vehiclePage__picAmbulance">
-        <img className="vehiclePage__picAmbulance--pic" src={picVehicle} alt="ambulance" />
+        <img
+          className="vehiclePage__picAmbulance--pic"
+          src={picVehicle}
+          alt="ambulance"
+        />
       </div>
       <div className="vehiclePage__info">
         <p>
@@ -54,20 +58,24 @@ const VehiclePage = () => {
         </p>
       </div>
       <div className="vehiclePage__title">
-        <h1>📅  Dates of vehicle A-0{id < 10 ? `0${id}` : `${id}`}</h1>
+        <h1>📅 Dates of vehicle A-0{id < 10 ? `0${id}` : `${id}`}</h1>
       </div>
       <div className="vehiclePage__DatesByVehicleContainer">
         <DatesByVehicles />
       </div>
       <div className="vehiclePage__title">
-      <h1> <Link to={NEWLOG_ROUTE}>📍</Link> Map of vehicle A-0{id < 10 ? `0${id}` : `${id}`}</h1>
+        <h1>
+          {' '}
+          <Link to={NEWLOG_ROUTE}>📍</Link> Map of vehicle A-0
+          {id < 10 ? `0${id}` : `${id}`}
+        </h1>
       </div>
       <div className="vehiclePage__mapLogsContainer">
         <MapLogs />
       </div>
       <div className="vehiclePage__buttonsContainer">
         <Link to={`/editvehicle/${id}`}>
-        <Button type={'button'} name={'Edit this vehicle'} />
+          <Button type={'button'} name={'Edit this vehicle'} />
         </Link>
         <Link to={`/maintenances/${id}`}>
           <Button type={'button'} name={'Maintenances'} />

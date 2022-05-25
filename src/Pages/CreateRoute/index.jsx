@@ -15,7 +15,7 @@ const CreateRoute = () => {
           initialValues={{
             idVehicleFk: 0,
             latitude: '',
-            longitude: ''
+            longitude: '',
           }}
           validate={(values) => {
             const errors = {};
@@ -84,12 +84,12 @@ const CreateRoute = () => {
                 <Field name="longitude" type="text" />
               </div>
               <div className="createRoute__button">
-              <Button type="submit" name={'Submit'} />
-              {formStatus && (
-                <div className="createRoute__form--error">
-                  Error while adding trackLog
+                <Button type="submit" name={'Submit'} />
+                {formStatus && (
+                  <div className="createRoute__form--error">
+                    Error while adding trackLog
                   </div>
-                  )}
+                )}
               </div>
             </Form>
           )}
@@ -98,6 +98,5 @@ const CreateRoute = () => {
     </div>
   );
 };
-
 
 export default CreateRoute;

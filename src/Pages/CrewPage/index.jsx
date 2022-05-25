@@ -26,7 +26,11 @@ const CrewPage = () => {
         </h1>
       </div>
       <div className="crewPage__picUserContainer">
-        <img className="crewPage__picUserContainer--pic" src={picProfile} alt={name} />
+        <img
+          className="crewPage__picUserContainer--pic"
+          src={picProfile}
+          alt={name}
+        />
       </div>
       <div className="crewPage__info">
         <p>

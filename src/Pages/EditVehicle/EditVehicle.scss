@@ -1,0 +1,38 @@
+.editVehicle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__formTitle{
+        padding: 2rem;
+    }
+    &__form{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 1rem;
+        padding-left: 2rem;
+        &__formTitle{
+            padding: 2rem;
+        }
+        &__inputs{
+            display: flex;
+            flex-direction: column;
+            width: 15%;
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        &__buttons{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+        }
+    }
+
+
+}

@@ -7,21 +7,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 const MapLogs = () => {
-    const dispatch = useDispatch();
-    const trackLogById = useSelector(state => state.trackLogById);
-    const id = useParams().id;
-    const positions = [];
-    useEffect(() => {
-        dispatch(getTrackLogByIdThunk(id));
-    }, [dispatch]);
-    
-    trackLogById.forEach(element => {
-      positions.push({
-        date: element.date,
-        location: [Number(element.latitude), Number(element.longitude)]
-      });
+  const dispatch = useDispatch();
+  const trackLogById = useSelector((state) => state.trackLogById);
+  const id = useParams().id;
+  const positions = [];
+  useEffect(() => {
+    dispatch(getTrackLogByIdThunk(id));
+  }, [dispatch]);
+
+  trackLogById.forEach((element) => {
+    positions.push({
+      date: element.date,
+      location: [Number(element.latitude), Number(element.longitude)],
     });
-    console.log(positions);
+  });
+  console.log(positions);
   const center = [4.684335, -74.113644];
   const icon = new Icon({
     iconUrl:
