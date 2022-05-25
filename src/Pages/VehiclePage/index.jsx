@@ -66,7 +66,9 @@ const VehiclePage = () => {
         <MapLogs />
       </div>
       <div className="vehiclePage__buttonsContainer">
+        <Link to={`/editvehicle/${id}`}>
         <Button type={'button'} name={'Edit this vehicle'} />
+        </Link>
         <Link to={`/maintenances/${id}`}>
           <Button type={'button'} name={'Maintenances'} />
         </Link>
