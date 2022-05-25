@@ -9,6 +9,7 @@ const initialState = {
   ctvMaintenance: [],
   prevMaintenance: [],
   specMaintenance: [],
+  trackLogById: [],
 };
 
 export default function reducer(state = initialState, action) {
@@ -62,6 +63,11 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         specMaintenance: action.payload,
+      };
+    case 'GET_TRACK_LOG_BY_ID':
+      return {
+        ...state,
+        trackLogById: action.payload,
       };
     default:
       return state;

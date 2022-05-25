@@ -6,3 +6,4 @@ export const MAINTENANCE_ROUTE = '/maintenances/:id';
 export const CREATEVEHICLE_ROUTE = '/createvehicle';
 export const CREATEUSER_ROUTE = '/createuser';
 export const NEWANNOTATION_ROUTE = '/newannotation/:id';
+export const NEWLOG_ROUTE = '/createlog';

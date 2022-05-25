@@ -9,6 +9,7 @@ import {
   CREATEVEHICLE_ROUTE,
   CREATEUSER_ROUTE,
   NEWANNOTATION_ROUTE,
+  NEWLOG_ROUTE,
 } from '../../Constants';
 import NavigationBar from '../NavigationBar';
 import Home from '../../Pages/Home';
@@ -19,6 +20,7 @@ import MaintenancesPage from 'src/Pages/MaintenancesPage';
 import CreateVehicle from 'src/Pages/CreateVehicle';
 import CreateUserPage from 'src/Pages/CreateUserPage';
 import CreateAnnotations from '../CreateAnnotations';
+import CreateRoute from 'src/Pages/CreateRoute';
 
 const MainRouter = () => {
   return (
@@ -33,6 +35,7 @@ const MainRouter = () => {
         <Route path={CREATEVEHICLE_ROUTE} element={<CreateVehicle />} />
         <Route path={CREATEUSER_ROUTE} element={<CreateUserPage />} />
         <Route path={NEWANNOTATION_ROUTE} element={<CreateAnnotations />} />
+        <Route path={NEWLOG_ROUTE} element={<CreateRoute />} />
       </Routes>
     </BrowserRouter>
   );

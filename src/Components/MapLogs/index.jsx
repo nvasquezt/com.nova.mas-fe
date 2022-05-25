@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Icon } from 'leaflet';
 import './MapLogs.scss';
+import { getTrackLogByIdThunk } from 'src/Store/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 const MapLogs = () => {
-  const position = [[4.684335, -74.113644], [4.684335, -74.123644], [4.684335, -74.133644]];
+    const dispatch = useDispatch();
+    const trackLogById = useSelector(state => state.trackLogById);
+    const id = useParams().id;
+    const positions = [];
+    useEffect(() => {
+        dispatch(getTrackLogByIdThunk(id));
+    }, [dispatch]);
+    
+    trackLogById.forEach(element => {
+      positions.push({
+        date: element.date,
+        location: [Number(element.latitude), Number(element.longitude)]
+      });
+    });
+    console.log(positions);
   const center = [4.684335, -74.113644];
   const icon = new Icon({
     iconUrl:
@@ -21,21 +38,21 @@ const MapLogs = () => {
     <div className="mapLogs">
       <MapContainer
         center={center}
-        zoom={11}
-        style={{ height: '70vh', width: '49vw' }}
+        zoom={13}
+        style={{ height: '70vh', width: '90vw' }}
         scrollWheelZoom={false}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        {position.map((position, index) => (
-            <Marker position={position} key={index} icon={icon}>
-                <Popup>
-                    <strong>⌚Hora y fecha</strong>        
-                    <p>{position}</p>
-                </Popup>
-            </Marker>
+        {positions.map((position, index) => (
+          <Marker position={position.location} key={index} icon={icon}>
+            <Popup>
+              <strong>⌚Date of Location</strong>
+              <p>{position.date}</p>
+            </Popup>
+          </Marker>
         ))}
       </MapContainer>
     </div>

@@ -16,3 +16,21 @@ export const getTrackLogById = async (id) => {
     console.log(error, 'error');
   }
 };
+
+export const createTrackLog = async (trackLog) => {
+  const token = sessionStorage.getItem('token');
+  try {
+    const response = await fetch(`${API_URL}/api/trackinglogs`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(trackLog),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error, 'error');
+  }
+};

@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Button from 'src/Components/Button';
 import DatesByVehicles from 'src/Components/datesByVehicles';
 import MapLogs from 'src/Components/MapLogs';
-import { HOME_ROUTE } from 'src/Constants';
+import { HOME_ROUTE, NEWLOG_ROUTE } from 'src/Constants';
 import { getVehicleByIdThunk } from 'src/Store/actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './VehiclePage.scss';
@@ -60,14 +60,13 @@ const VehiclePage = () => {
         <DatesByVehicles />
       </div>
       <div className="vehiclePage__title">
-        <h1>📍  Map of vehicle A-0{id < 10 ? `0${id}` : `${id}`}</h1>
+      <h1> <Link to={NEWLOG_ROUTE}>📍</Link> Map of vehicle A-0{id < 10 ? `0${id}` : `${id}`}</h1>
       </div>
       <div className="vehiclePage__mapLogsContainer">
         <MapLogs />
       </div>
       <div className="vehiclePage__buttonsContainer">
         <Button type={'button'} name={'Edit this vehicle'} />
-        <Button type={'button'} name={'Routes'} />
         <Link to={`/maintenances/${id}`}>
           <Button type={'button'} name={'Maintenances'} />
         </Link>
