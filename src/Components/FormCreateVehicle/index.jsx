@@ -69,9 +69,9 @@ const FormCreateVehicle = () => {
         }}
         onSubmit={(values) => {
           const createDateProcess = async () => {
-            const data ={idVehicleFk: values.id};
+            const data = { idVehicleFk: values.id };
             await createDate(data);
-          }
+          };
           createDateProcess();
           const createVehicleProcess = async () => {
             values.id = Number(values.id);

@@ -19,7 +19,7 @@ const MaintenancesPage = () => {
       </div>
       <div className="maintenancesPage__addMaintenance">
         <Link to={`/addprevmaintenance/${id}`}>
-        <Button type="button" name="+ Preventive maintenance" />
+          <Button type="button" name="+ Preventive maintenance" />
         </Link>
       </div>
       <div className="maintenancesPage__ctvMaintContainer">

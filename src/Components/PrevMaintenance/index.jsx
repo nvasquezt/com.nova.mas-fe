@@ -26,7 +26,7 @@ const PrevMaintenance = () => {
           >
             <div className="prevMaintenance__info--each">
               <p>
-                <strong>Id Maintenance:</strong> {item.idMaintenance+' ' }
+                <strong>Id Maintenance:</strong> {item.idMaintenance + ' '}
                 <strong>Date: </strong> {item.datePrevMaint}
                 <br />
                 <strong>Description: </strong> {item.description}
@@ -34,7 +34,11 @@ const PrevMaintenance = () => {
               </p>
             </div>
             <div className="prevMaintenance__info">
-              <img className='prevMaintenance__info--picCommInv' src={item.commercialInvoice} alt="commercialInvoice" />
+              <img
+                className="prevMaintenance__info--picCommInv"
+                src={item.commercialInvoice}
+                alt="commercialInvoice"
+              />
             </div>
           </div>
         ))

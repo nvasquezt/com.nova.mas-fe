@@ -10,7 +10,6 @@ const ExpirableDates = () => {
     dispatch(getAllDatesThunk());
   }, [dispatch]);
 
-
   const dateToExpire = (date) => {
     const dateObj = new Date(date);
     const today = new Date();
@@ -23,12 +22,41 @@ const ExpirableDates = () => {
       <div className="expirableDates__info">
         {allDates.map((date) => (
           <div key={date.dateCode}>
-            <div className='expirableDates__info'>
+            <div className="expirableDates__info">
               <p>
                 <strong>Ambulance: </strong> {date.idVehicleFk} <br />
-                <strong className={dateToExpire(date.soatDate) < 15 ? 'expirableDates__info--expired' : ''}>SOAT Expires in: </strong> {dateToExpire(date.soatDate)} days<br />
-                <strong className={dateToExpire(date.insuranceDate) < 15 ? 'expirableDates__info--expired' : ''}>Insurance Expires in: </strong> {dateToExpire(date.insuranceDate)} days <br />
-                <strong className={dateToExpire(date.legalRevisionDate) < 15 ? 'expirableDates__info--expired' : ''}>Legal revision Expires in: </strong> {dateToExpire(date.legalRevisionDate)} days<br />
+                <strong
+                  className={
+                    dateToExpire(date.soatDate) < 15
+                      ? 'expirableDates__info--expired'
+                      : ''
+                  }
+                >
+                  SOAT Expires in:{' '}
+                </strong>{' '}
+                {dateToExpire(date.soatDate)} days
+                <br />
+                <strong
+                  className={
+                    dateToExpire(date.insuranceDate) < 15
+                      ? 'expirableDates__info--expired'
+                      : ''
+                  }
+                >
+                  Insurance Expires in:{' '}
+                </strong>{' '}
+                {dateToExpire(date.insuranceDate)} days <br />
+                <strong
+                  className={
+                    dateToExpire(date.legalRevisionDate) < 15
+                      ? 'expirableDates__info--expired'
+                      : ''
+                  }
+                >
+                  Legal revision Expires in:{' '}
+                </strong>{' '}
+                {dateToExpire(date.legalRevisionDate)} days
+                <br />
               </p>
             </div>
           </div>

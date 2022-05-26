@@ -80,7 +80,6 @@ const EditVehicle = () => {
     e.preventDefault();
     await updateVehicle(id, formVehicle);
     window.location.href = '/home';
-
   };
 
   useEffect(() => {

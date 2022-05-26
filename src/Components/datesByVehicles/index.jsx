@@ -18,10 +18,11 @@ const DatesByVehicles = () => {
   };
 
   const handleDateChange = (e) => {
-    const data = {[e.target.name]: e.target.value+'T23:59:00.461Z'}
+    const data = { [e.target.name]: e.target.value + 'T23:59:00.461Z' };
     setDate({
       ...date,
-      ...data});
+      ...data,
+    });
   };
 
   const handlerSubmit = async (e) => {
@@ -36,7 +37,9 @@ const DatesByVehicles = () => {
   const { soatDate, insuranceDate, legalRevisionDate } = dateByIdVehicle;
   const newSoatDate = soatDate ? soatDate.split('T')[0] : '';
   const newInsuranceDate = insuranceDate ? insuranceDate.split('T')[0] : '';
-  const newLegalRevisionDate = legalRevisionDate ? legalRevisionDate.split('T')[0] : '';
+  const newLegalRevisionDate = legalRevisionDate
+    ? legalRevisionDate.split('T')[0]
+    : '';
   const { soatCode, insurancePolicy, rtmCode } = selectedVehicle;
   return (
     <div className="datesByVhehicle">
@@ -69,13 +72,14 @@ const DatesByVehicles = () => {
       <form className="datesByVhehicle__modify" onSubmit={handlerSubmit}>
         <div className="datesByVhehicle__input">
           <label
-          htmlFor="soatDate"
-          className={
-            displayModify
-              ? 'datesByVhehicle__input--show'
-              : 'datesByVhehicle__input--hide'
-          }
-          ><strong>SOAT Secure Date</strong>
+            htmlFor="soatDate"
+            className={
+              displayModify
+                ? 'datesByVhehicle__input--show'
+                : 'datesByVhehicle__input--hide'
+            }
+          >
+            <strong>SOAT Secure Date</strong>
           </label>
           <input
             type="date"
@@ -90,13 +94,14 @@ const DatesByVehicles = () => {
         </div>
         <div className="datesByVhehicle__input">
           <label
-          htmlFor="insuranceDate"
-          className={
-            displayModify
-              ? 'datesByVhehicle__input--show'
-              : 'datesByVhehicle__input--hide'
-          }
-          ><strong>Insurance Date</strong>
+            htmlFor="insuranceDate"
+            className={
+              displayModify
+                ? 'datesByVhehicle__input--show'
+                : 'datesByVhehicle__input--hide'
+            }
+          >
+            <strong>Insurance Date</strong>
           </label>
           <input
             type="date"
@@ -111,13 +116,14 @@ const DatesByVehicles = () => {
         </div>
         <div className="datesByVhehicle__input">
           <label
-          htmlFor="legalRevisionDate"
-          className={
-            displayModify
-              ? 'datesByVhehicle__input--show'
-              : 'datesByVhehicle__input--hide'
-          }
-          ><strong>Insurance Date</strong>
+            htmlFor="legalRevisionDate"
+            className={
+              displayModify
+                ? 'datesByVhehicle__input--show'
+                : 'datesByVhehicle__input--hide'
+            }
+          >
+            <strong>Insurance Date</strong>
           </label>
           <input
             type="date"
