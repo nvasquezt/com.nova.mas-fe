@@ -12,6 +12,7 @@ import {
   NEWLOG_ROUTE,
   EDITVEHICLE_ROUTE,
   ADDPREVMAINT_ROUTE,
+  EDITSTAFF_ROUTE,
 } from '../../Constants';
 import NavigationBar from '../NavigationBar';
 import Home from '../../Pages/Home';
@@ -25,6 +26,7 @@ import CreateAnnotations from '../CreateAnnotations';
 import CreateRoute from 'src/Pages/CreateRoute';
 import EditVehicle from 'src/Pages/EditVehicle';
 import AddPrevMaintenance from 'src/Pages/AddPrevMaintenance';
+import EditStaff from 'src/Pages/EditStaff';
 
 const MainRouter = () => {
   return (
@@ -42,6 +44,7 @@ const MainRouter = () => {
         <Route path={NEWLOG_ROUTE} element={<CreateRoute />} />
         <Route path={EDITVEHICLE_ROUTE} element={<EditVehicle />} />
         <Route path={ADDPREVMAINT_ROUTE} element={<AddPrevMaintenance />} />
+        <Route path={EDITSTAFF_ROUTE} element={<EditStaff />} />
       </Routes>
     </BrowserRouter>
   );

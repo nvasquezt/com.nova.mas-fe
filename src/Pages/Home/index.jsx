@@ -43,6 +43,9 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <div className="home__activeStaff--title">
+        <h1>Soon to expire</h1>
+      </div>
       <div className="home__expirableDates">
         <ExpirableDates />
       </div>

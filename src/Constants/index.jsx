@@ -9,3 +9,4 @@ export const NEWANNOTATION_ROUTE = '/newannotation/:id';
 export const NEWLOG_ROUTE = '/createlog';
 export const EDITVEHICLE_ROUTE = '/editvehicle/:id';
 export const ADDPREVMAINT_ROUTE = '/addprevmaintenance/:id';
+export const EDITSTAFF_ROUTE = '/editstaff/:id';
