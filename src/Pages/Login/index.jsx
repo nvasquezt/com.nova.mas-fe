@@ -1,79 +1,87 @@
 import React, { useState } from 'react';
-import Button from 'src/Components/Button';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  Grid,
+  Paper,
+  TextField,
+  Typography
+} from '@material-ui/core';
+import useStyles from './useStyles'
+import {SafetyCheck} from '@mui/icons-material'
+import { HOME_ROUTE } from '../../Constants'
 import { login } from '../../services/loginServices';
-import './Login.scss';
 
 const Login = () => {
-  const [loginStatus, setLoginStatus] = useState(false);
+  const classes = useStyles();
+  const [loginInfo, setLoginInfo] = useState({ userId: '', password: '' });
+
+  const handleChange = (evt) =>{
+    setLoginInfo({ ...loginInfo,[evt.target.name]: evt.target.value });
+  }
+
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    const loginProcess = await login(loginInfo);
+    if(loginProcess.token){
+      const { token } = loginProcess
+      sessionStorage.setItem('token', token);
+      window.location.href = HOME_ROUTE;
+    }
+    
+  }
+
   if (sessionStorage.token) {
     return <h1>You are logged in</h1>;
   }
   return (
-    <div className="login">
-      <div className="login__title">
-        <h1>Login</h1>
-      </div>
-      <div className="login__formContainer">
-        <Formik
-          initialValues={{ userId: '', password: '' }}
-          validate={(values) => {
-            const errors = {};
-            if (!values.userId) {
-              errors.userId = 'Required';
-            }
-            if (!values.password) {
-              errors.password = 'Required';
-            }
-            return errors;
-          }}
-          onSubmit={(values) => {
-            const logInProcess = async () => {
-              const response = await login(values);
-              const { token } = response;
-              if (typeof token === 'string') {
-                window.location.href = '/home';
-                sessionStorage.setItem('token', token);
-              } else {
-                setLoginStatus(true);
-              }
-            };
-            logInProcess();
-          }}
-        >
-          {({ errors }) => (
-            <Form>
-              <div className="login__formContainer">
-                <div className="login__formContainer--fields">
-                  <label htmlFor="userId">User </label>
-                  <Field name="userId" type="text" />
-                  <ErrorMessage
-                    name="userId"
-                    component={() => (
-                      <div className="login__error">{errors.userId}</div>
-                    )}
-                  />
-                </div>
-                <div className="login__formContainer--fields">
-                  <label htmlFor="password">Password</label>
-                  <Field name="password" type="password" />
-                  <ErrorMessage
-                    name="password"
-                    component={() => (
-                      <div className="login__error">{errors.password}</div>
-                    )}
-                  />
-                </div>
-                <Button type="submit" name="Login" />
-                {loginStatus && (
-                  <div className="login__error">Invalid Login</div>
-                )}
-              </div>
-            </Form>
-          )}
-        </Formik>
-      </div>
-    </div>
+    <Grid component='main' className={classes.root}>
+      <CssBaseline />
+      <Grid component={Paper} className={classes.login}>
+        <Typography component="h1" variant="h5" >
+          AmbuFMS Login
+        </Typography>
+        <Avatar>
+          <SafetyCheck />
+        </Avatar>
+        <form onSubmit={handleSubmit} className={classes.form}>
+          <TextField
+          required
+          autoFocus
+          label="User"
+          color="primary"
+          margin="normal"
+          fullWidth
+          name="userId"
+          variant="outlined"
+          type="text"
+          onChange={handleChange}
+          />
+          <TextField
+          required
+          autoFocus
+          label="Password"
+          color="primary"
+          fullWidth
+          name="password"
+          variant="outlined"
+          type="password"
+          onChange={handleChange}
+          />
+          <Button
+            fullWidth
+            className={classes.button}
+            type="submit"
+            variant="contained"
+            color="primary"
+          >
+            Login
+          </Button>
+        </form>
+      </Grid>
+
+    </Grid>
   );
 };
 
