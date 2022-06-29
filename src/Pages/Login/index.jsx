@@ -54,7 +54,7 @@ const Login = () => {
           margin="normal"
           fullWidth
           name="userId"
-          variant="outlined"
+          variant="filled"
           type="text"
           onChange={handleChange}
           />
@@ -65,7 +65,7 @@ const Login = () => {
           color="primary"
           fullWidth
           name="password"
-          variant="outlined"
+          variant="filled"
           type="password"
           onChange={handleChange}
           />
